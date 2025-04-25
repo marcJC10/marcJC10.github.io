@@ -1,0 +1,362 @@
+<!-- filepath: /Users/marc/Documents/GitHub/marcJC10.github.io/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marc Jiménez Comí – Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <div class="text-content">
+        <h1>Marc Jiménez Comí</h1>
+        <p>Arenys de Mar 08350 · marcusero10@gmail.com</p>
+      </div>
+      <img src="profile.png" alt="Marc's presentation picture" class="profile-small">
+    </div>
+    <img src="profile.png" alt="Marc's presentation picture" class="profile-large">
+  </header>
+
+  <nav class="nav-type">
+    <button onclick="showType('coverLetter')" class="active" id="coverLetterBtn">Carta de Presentación</button>
+    <button onclick="showType('cv')" id="cvBtn">Curriculum</button>
+  </nav>
+
+  <nav class="nav-lang">
+    <button onclick="showLang('ca')" class="active" id="caBtn">Català</button>
+    <button onclick="showLang('en')" id="enBtn">English</button>
+    <button onclick="showLang('es')" id="esBtn">Español</button>
+  </nav>
+
+  <section id="content"></section>
+
+  <script>
+    // Variables d'estat actual
+    let currentType = 'coverLetter';
+    let currentLang = 'ca';
+
+    // Text dels botons en funció de la llengua seleccionada
+    const buttonLabels = {
+      ca: {
+        coverLetter: "Carta de Presentació",
+        cv: "Currículum",
+        ca: "Català",
+        en: "Anglès",
+        es: "Castellà"
+      },
+      en: {
+        coverLetter: "Cover Letter",
+        cv: "Resume",
+        ca: "Catalan",
+        en: "English",
+        es: "Spanish"
+      },
+      es: {
+        coverLetter: "Carta de Presentación",
+        cv: "Currículum",
+        ca: "Catalán",
+        en: "Inglés",
+        es: "Español"
+      }
+    };
+
+    // Carta de Presentació
+    const coverLetterContent = {
+      ca: `<h2>‣ Carta de Presentació</h2>
+<p class="date">Arenys de Mar, 2025</p>
+<p class="greeting">Una breu introducció sobre mi:</p>
+<p>Sóc estudiant d'Enginyeria Informàtica i Gestió de Sistemes d'Informació al Tecnocampus (UPF) i actualment estic buscant l'oportunitat de realitzar pràctiques professionals per complementar la meva formació acadèmica.</p>
+<p>Al llarg dels meus estudis, he desenvolupat habilitats tècniques en diversos llenguatges de programació (Java, Python, JavaScript), tecnologies web (HTML, CSS), gestió de bases de dades (SQL) i sistemes de control de versions (GitHub). També he adquirit coneixements en sistemes operatius, xarxes i seguretat informàtica.</p>
+<p>A més de la meva formació tècnica, compto amb experiència laboral en el sector del servei tècnic en sistemes de seguretat, així com en atenció al client. Aquestes experiències m'han permès desenvolupar habilitats de comunicació, treball en equip i resolució de problemes.</p>
+<p>Estic especialment interessat en la possibilitat de signar un conveni de pràctiques amb el meu centre universitari per posar punt final a la meva etapa universitària, i considero que la seva empresa podria ser l'entorn ideal per aplicar i ampliar els meus coneixements.</p>
+<p>Des d'aquest portafoli poden accedir a un currículum amb més detall.</p>
+<p class="closing">Salut!</p>
+<p class="signature">Marc Jiménez Comí</p>`,
+      
+      en: `<h2>‣ Cover Letter</h2>
+<p class="date">Arenys de Mar, 2025</p>
+<p class="greeting">A brief introduction about me:</p>
+<p>I am a student of Computer Engineering and Information Systems Management at Tecnocampus (UPF) and I am currently looking for an opportunity to undertake professional internships to complement my academic training.</p>
+<p>Through my studies, I have developed technical skills in various programming languages (Java, Python, JavaScript), web technologies (HTML, CSS), database management (SQL), and version control systems (GitHub). I have also acquired knowledge in operating systems, networks, and computer security.</p>
+<p>In addition to my technical training, I have work experience in the security systems technical service sector, as well as in customer service. These experiences have allowed me to develop communication skills, teamwork, and problem-solving abilities.</p>
+<p>I am particularly interested in the possibility of signing an internship agreement with my university to complete my university studies, and I believe your company could be the ideal environment to apply and expand my knowledge.</p>
+<p>From this portfolio you can access a more detailed CV resume about my experience.</p>
+<p class="closing">Sincerely,</p>
+<p class="signature">Marc Jiménez Comí</p>`,
+      
+      es: `<h2>‣ Carta de Presentación</h2>
+<p class="date">Arenys de Mar, 2025</p>
+<p class="greeting">Una breve introducción sobre mí:</p>
+<p>Soy estudiante de Ingeniería Informática y Gestión de Sistemas de Información en Tecnocampus (UPF) y actualmente estoy buscando la oportunidad de realizar prácticas profesionales para complementar mi formación académica.</p>
+<p>A lo largo de mis estudios, he desarrollado habilidades técnicas en diversos lenguajes de programación (Java, Python, JavaScript), tecnologías web (HTML, CSS), gestión de bases de datos (SQL) y sistemas de control de versiones (GitHub). También he adquirido conocimientos en sistemas operativos, redes y seguridad informática.</p>
+<p>Además de mi formación técnica, cuento con experiencia laboral en el sector del servicio técnico en sistemas de seguridad, así como en atención al cliente. Estas experiencias me han permitido desarrollar habilidades de comunicación, trabajo en equipo y resolución de problemas.</p>
+<p>Estoy especialmente interesado en la posibilidad de firmar un convenio de prácticas con mi centro universitario para poner punto final a mi etapa universitaria, y considero que su empresa podría ser el entorno ideal para aplicar y ampliar mis conocimientos.</p>
+<p>Desde este portafolio pueden acceder a un currículum con más detalle.</p>
+<p class="closing">Atentamente,</p>
+<p class="signature">Marc Jiménez Comí</p>`
+    };
+
+    // CV
+    const cvContent = {
+      en: `<h2>‣ Personal Information</h2>
+<p>Nationality: Spain<br>Date of Birth: 20/02/2002<br>Gender: Male</p>
+<h2>‣ Education</h2>
+<ul>
+  <li><strong>La Presentació School</strong>, Arenys de Mar, Barcelona
+    <ul>
+      <li>Primary, Secondary and Scientific-Technological Baccalaureate (Completed in 2019–2020)</li>
+    </ul>
+  </li>
+  <li><strong>Academica International Studies</strong>, Barcelona
+    <ul>
+      <li>American International High School Diploma (Dual Diploma of English, Academica) (Completed in 2019–2020)</li>
+    </ul>
+  </li>
+  <li><strong>Tecnocampus (UPF)</strong>, Mataró, Barcelona
+    <ul>
+      <li>Current student of Computer Engineering and Information Systems Management</li>
+    </ul>
+  </li>
+</ul>
+<h2>‣ Certifications</h2>
+<ul>
+  <li><strong>English Certification 360 LPT B2</strong> (Equivalent to Cambridge FCE) – 2021</li>
+  <li><strong>Dual Diploma Program (American High School)</strong> – 2016 to 2020</li>
+</ul>
+<h2>‣ Work Experience</h2>
+<ul>
+  <li><strong>Private tutoring for over 5 years</strong> – Languages (Catalan, Spanish, English), mathematics and general academic support (Primary, Secondary, Baccalaureate)</li>
+  <li><strong>Kitchen staff in a Beach Bar</strong> – Summer season 2021</li>
+  <li><strong>Waiter</strong> – From May to November 2022</li>
+  <li><strong>Technical support at GSSecurity</strong> – Intrusion systems and CCTV (From June 2023 to present)</li>
+</ul>
+<h2>‣ Desired Position</h2>
+<p>I am a young and proactive person, eager to work to finance my studies, which are currently my main focus during the academic year.<br><br>
+I would be delighted to collaborate with your company, bringing my resources, knowledge and motivation to both work and learn, to serve you and your business.<br><br>
+<strong>I am currently seeking the opportunity to sign an internship agreement with my university in order to complete my university studies.</strong></p>
+<h2>‣ Skills</h2>
+<ul>
+  <li><strong>Native Languages:</strong>
+    <ul>
+      <li>Spoken and written <strong>Catalan.</strong> Native level.</li>
+      <li>Spoken and written <strong>Spanish.</strong> Native level.</li>
+    </ul>
+  </li>
+  <li><strong>Other Languages:</strong>
+    <ul>
+      <li>Spoken and written <strong>English.</strong> High level.</li>
+      <li>Spoken and written <strong>French.</strong> Very basic level.</li>
+    </ul>
+  </li>
+  <li><strong>Skills and Competencies:</strong>
+    <ul>
+      <li>I really enjoy working with people and communication</li>
+      <li>Proficiency with computers and other digital devices</li>
+      <li>Experience with Operating Systems: Linux, Windows, macOS, iOS, and Android</li>
+      <li>Positive attitude and willingness to work</li>
+      <li>Java Development</li>
+      <li>Springboot</li>
+      <li>Python Development</li>
+      <li>Github</li>
+      <li>Docker</li>
+      <li>SQL</li>
+      <li>WordPress and other CMS</li>
+      <li>HTML, CSS & JavaScript</li>
+      <li>Network Fundamentals, Network Access, IP Connectivity, IP Services, firewalls, DNS, LAN, WAN</li>
+    </ul>
+  </li>
+</ul>`,
+      es: `<h2>‣ Información Personal</h2>
+<p>Nacionalidad: España<br>Fecha de nacimiento: 20/02/2002<br>Género: Masculino</p>
+<h2>‣ Formación</h2>
+<ul>
+  <li><strong>Escuela La Presentación</strong>, Arenys de Mar, Barcelona
+    <ul>
+      <li>Primaria, Secundaria y Bachillerato Científico-Tecnológico (Finalizado curso 2019-2020)</li>
+    </ul>
+  </li>
+  <li><strong>Academica International Studies</strong>, Barcelona
+    <ul>
+      <li>Bachillerato Internacional Americano (Dual Diploma of English, Academica) (Finalizado curso 2019-2020)</li>
+    </ul>
+  </li>
+  <li><strong>Tecnocampus (UPF)</strong>, Mataró, Barcelona
+    <ul>
+      <li>Estudiante actual de Ingeniería Informática y Gestión de Sistemas de Información</li>
+    </ul>
+  </li>
+</ul>
+<h2>‣ Títulos</h2>
+<ul>
+  <li><strong>Certificación de inglés 360 LPT B2</strong> (equivalente FCE Cambridge) – 2021</li>
+  <li><strong>Dual Diploma Program (Bachillerato Americano)</strong> – 2016 a 2020</ul>
+<h2>‣ Experiencia Laboral</h2>
+<ul>
+  <li><strong>Clases particulares durante más de 5 años</strong> – Idiomas (Catalán, Castellano, Inglés), matemáticas y apoyo general (Primaria, ESO, Bachillerato)</li>
+  <li><strong>Equipo de cocina en un Chiringuito de Playa</strong> – Temporada de verano 2021</li>
+  <li><strong>Camarero</strong> – De mayo a noviembre 2022</li>
+  <li><strong>Servicio técnico en GSSecurity</strong> – Sistemas de intrusión y CCTV (Desde junio 2023 hasta la actualidad)</li>
+</ul>
+<h2>‣ Puesto Deseado</h2>
+<p>Soy una persona joven y con iniciativa, y estoy deseando trabajar para financiar mis estudios, que actualmente son mi actividad principal durante el curso académico.<br><br>
+Estaría encantado de poder colaborar con su empresa, poniendo mis recursos, conocimientos y ganas, tanto de trabajar como de aprender, a su servicio y al de su negocio.<br><br>
+<strong>Actualmente, estoy buscando la posibilidad de firmar un convenio de prácticas con mi centro universitario para poder poner punto final a mi etapa universitaria.</strong></p>
+<h2>‣ Competencias</h2>
+<ul>
+  <li><strong>Lenguas Maternas:</strong>
+    <ul>
+      <li><strong>Catalán</strong> hablado y escrito. Nivel nativo.</li>
+      <li><strong>Castellano</strong> hablado y escrito. Nivel nativo.</li>
+    </ul>
+  </li>
+  <li><strong>Otros Idiomas:</strong>
+    <ul>
+      <li><strong>Inglés</strong> hablado y escrito. Nivel alto.</li>
+      <li><strong>Francés</strong> hablado y escrito. Nivel muy básico.</li>
+    </ul>
+  </li>
+  <li><strong>Habilidades y Competencias:</strong>
+    <ul>
+      <li>Me gusta mucho el trato con las personas y la comunicación</li>
+      <li>Dominio de ordenadores y otros dispositivos informáticos</li>
+      <li>Dominio de los Sistemas Operativos Linux, Windows, MacOS, iOS y Android</li>
+      <li>Actitud positiva y con ganas de trabajar</li>
+      <li>Desarrollo en Java</li>
+      <li>Springboot</li>
+      <li>Desarrollo en Python</li>
+      <li>Github</li>
+      <li>Docker</li>
+      <li>SQL</li>
+      <li>WordPress y otros CMS</li>
+      <li>HTML, CSS & JavaScript</li>
+      <li>Fundamentos de Redes, Acceso a Redes, Conectividad IP, Servicios IP, firewalls, DNS, LAN, WAN</li>
+    </ul>
+  </li>
+</ul>`,
+      ca: `<h2>‣ Informació Personal</h2>
+<p>Nacionalitat: Espanya<br>Data de naixement: 20/02/2002<br>Gènere: Masculí</p>
+<h2>‣ Formació</h2>
+<ul>
+  <li><strong>Escola La Presentació</strong>, Arenys de Mar, Barcelona
+    <ul>
+      <li>Primària, Secundària i Batxillerat Científic-Tecnològic (Finalitzat curs 2019-2020)</li>
+    </ul>
+  </li>
+  <li><strong>Academica International Studies</strong>, Barcelona
+    <ul>
+      <li>Batxillerat Internacional Americà (Dual Diploma of English, Academica) (Finalitzat curs 2019-2020)</li>
+    </ul>
+  </li>
+  <li><strong>Tecnocampus (UPF)</strong>, Mataró, Barcelona
+    <ul>
+      <li>Estudiant actual d'Enginyeria Informàtica i Gestió de Sistemes d'Informació</li>
+    </ul>
+  </li>
+</ul>
+<h2>‣ Títols</h2>
+<ul>
+  <li><strong>Certificació d'anglès 360 LPT B2</strong> (equivalent FCE Cambridge) – 2021</li>
+  <li><strong>Dual Diploma Program (Batxillerat Americà)</strong> – 2016 a 2020</li>
+</ul>
+<h2>‣ Experiència Laboral</h2>
+<ul>
+  <li><strong>Classes particulars durant més de 5 anys</strong> – Idiomes (Català, Castellà, Anglès), matemàtiques i suport general (Primària, ESO, Batxillerat)</li>
+  <li><strong>Equip de cuina d'un Xiringuito de Platja</strong> – Temporada d'Estiu 2021</li>
+  <li><strong>Cambrer</strong> – De maig a novembre 2022</li>
+  <li><strong>Servei tècnic a GSSecurity</strong> – Sistemes d'intrusió i CCTV (Des de juny 2023 fins a l'actualitat)</li>
+</ul>
+<h2>‣ Posició Desitjada</h2>
+<p>Sóc una persona jove i amb iniciativa, i estic desitjant treballar per finançar els meus estudis, que actualment són la meva activitat principal durant el curs acadèmic.<br><br>
+Estaria encantat de poder col·laborar amb la seva empresa, posant els meus recursos, coneixements i ganes, tant de treballar com d'aprendre, al seu servei i al del seu negoci.<br><br>
+<strong>Actualment, estic buscant la possibilitat de signar un conveni de pràctiques amb el meu centre Universitari per tal de poder posar punt i final a la meva etapa Universitària.</strong></p>
+<h2>‣ Competències</h2>
+<ul>
+  <li><strong>Llengües Maternes:</strong>
+    <ul>
+      <li><strong>Català</strong> parlat i escrit. Nivell natiu.</li>
+      <li><strong>Castellà</strong> parlat i escrit. Nivell natiu.</li>
+    </ul>
+  </li>
+  <li><strong>Altres Llengües:</strong>
+    <ul>
+      <li><strong>Anglès</strong> parlat i escrit. Nivell alt.</li>
+      <li><strong>Francès</strong> parlat i escrit. Nivell molt bàsic.</li>
+    </ul>
+  </li>
+  <li><strong>Habilitats i Competències:</strong>
+    <ul>
+      <li>M'agrada molt el tracte amb les persones i la comunicació</li>
+      <li>Domini dels ordinadors i altres dispositius informàtics</li>
+      <li>Domini dels Sistemes Operatius Linux, Windows, MacOS, iOS, i Android</li>
+      <li>Actitud positiva i amb ganes de treballar</li>
+      <li>Desenvolupament en Java</li>
+      <li>Springboot</li>
+      <li>Desenvolupament en Python</li>
+      <li>Github</li>
+      <li>Docker</li>
+      <li>SQL</li>
+      <li>WordPress i altres CMS</li>
+      <li>HTML, CSS & JavaScript</li>
+      <li>Network Fundamentals, Network Access, IP Connectivity, IP Services, firewalls, DNS, LAN, WAN</li>
+    </ul>
+  </li>
+</ul>`
+    };
+
+    function showType(type) {
+      // actualiza l'estil del botó actiu
+      document.getElementById('coverLetterBtn').classList.remove('active');
+      document.getElementById('cvBtn').classList.remove('active');
+      document.getElementById(type + 'Btn').classList.add('active');
+      
+      // actualitza el tipus actual
+      currentType = type;
+      
+      // actualitza el contingut en funció del tipus i llengua actuals
+      updateContent();
+    }
+
+    function showLang(lang) {
+      // actualitza l'estil del botó actiu
+      document.getElementById('caBtn').classList.remove('active');
+      document.getElementById('enBtn').classList.remove('active');
+      document.getElementById('esBtn').classList.remove('active');
+      document.getElementById(lang + 'Btn').classList.add('active');
+      
+      // actualitza la llengua actual
+      currentLang = lang;
+      
+      // actualitza els textos dels botons
+      updateButtonLabels();
+      
+      // actualitza el contingut en funció del tipus i llengua actuals
+      updateContent();
+    }
+
+    function updateButtonLabels() {
+      // actualitza els textos dels botons segon la llengua actual
+      document.getElementById('coverLetterBtn').textContent = buttonLabels[currentLang].coverLetter;
+      document.getElementById('cvBtn').textContent = buttonLabels[currentLang].cv;
+      document.getElementById('caBtn').textContent = buttonLabels[currentLang].ca;
+      document.getElementById('enBtn').textContent = buttonLabels[currentLang].en;
+      document.getElementById('esBtn').textContent = buttonLabels[currentLang].es;
+    }
+
+    function updateContent() {
+      // mostra el contingut corresponent al tipus i llengua actuals
+      if (currentType === 'cv') {
+        document.getElementById('content').innerHTML = cvContent[currentLang];
+      } else {
+        document.getElementById('content').innerHTML = coverLetterContent[currentLang];
+      }
+    }
+
+    // Inicialitza el contingut amb la carta de presentació en català
+    showType('coverLetter');
+    showLang('ca');
+    updateButtonLabels(); // Asegura que los botones tengan el texto correcto al inicio
+  </script>
+</body>
+</html>
