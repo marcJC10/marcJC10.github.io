@@ -178,6 +178,10 @@ p {
     margin-bottom: 1rem;
     color: var(--light-text);
 }
+p2 {
+    margin-bottom: 1rem;
+    color: var(--background);
+}
 
 /* Cover letter specific styles */
 .date {
