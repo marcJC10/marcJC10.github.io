@@ -1,252 +1,414 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+/* Importació de fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
+/* Variables de colors Material You */
 :root {
-    --primary-color: #2563eb;
-    --secondary-color: #1e40af;
-    --accent-color: #3b82f6;
-    --text-color: #1f2937;
-    --light-text: #6b7280;
-    --background: #f3f4f6;
-    --card-bg: #ffffff;
-    --header-bg: #1e293b;
+  /* Mode clar (predeterminat) */
+  /* Colors primaris - Blau marí */
+  --primary-color: #1A237E;
+  --on-primary: #FFFFFF;
+  --primary-container: #C5CAE9;
+  --on-primary-container: #0D1046;
+  
+  /* Colors secundaris */
+  --secondary-color: #283593;
+  --on-secondary: #FFFFFF;
+  --secondary-container: #E8EAF6;
+  --on-secondary-container: #0B1355;
+  
+  /* Colors d'accent */
+  --tertiary-color: #283593;
+  --on-tertiary: #FFFFFF;
+  --tertiary-container: #D1D9FF;
+  --on-tertiary-container: #0F1775;
+  
+  /* Colors de superfície */
+  --surface: #F5F7FF;
+  --on-surface: #121212;
+  --surface-variant: #E1E2FF;
+  --on-surface-variant: #4D4F62;
+  
+  /* Colors d'error */
+  --error: #B00020;
+  --on-error: #FFFFFF;
+  --error-container: #FCD8DF;
+  --on-error-container: #650012;
+  
+  /* Colors de fons */
+  --background: #F5F7FF;
+  --on-background: #121212;
+  
+  /* Colors de text */
+  --text-color: #121212;
+  --light-text: #4D4F62;
+  
+  /* Elevacions i ombres */
+  --elevation-1: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.14);
+  --elevation-2: 0 3px 6px rgba(0,0,0,0.15), 0 2px 4px rgba(0,0,0,0.12);
+  --elevation-3: 0 10px 20px rgba(0,0,0,0.15), 0 3px 6px rgba(0,0,0,0.10);
+  
+  /* Radis dels cantons */
+  --radius-small: 8px;
+  --radius-medium: 16px;
+  --radius-large: 24px;
+  
+  /* Variables per a transicions */
+  --transition-speed: 0.3s;
 }
 
+/* Mode fosc */
+[data-theme="dark"] {
+  /* Colors primaris - Blau marí fosc */
+  --primary-color: #3949AB;
+  --on-primary: #FFFFFF;
+  --primary-container: #1A237E;
+  --on-primary-container: #D6DDFF;
+  
+  /* Colors secundaris */
+  --secondary-color: #5C6BC0;
+  --on-secondary: #FFFFFF;
+  --secondary-container: #303F9F;
+  --on-secondary-container: #DAE2FF;
+  
+  /* Colors d'accent */
+  --tertiary-color: #7986CB;
+  --on-tertiary: #FFFFFF;
+  --tertiary-container: #283593;
+  --on-tertiary-container: #E0E5FF;
+  
+  /* Colors de superfície */
+  --surface: #121212;
+  --on-surface: #E0E0E0;
+  --surface-variant: #222639;
+  --on-surface-variant: #C4C6DD;
+  
+  /* Colors de fons */
+  --background: #121212;
+  --on-background: #E0E0E0;
+  
+  /* Colors de text */
+  --text-color: #E0E0E0;
+  --light-text: #ABABAB;
+}
+
+/* Estils globals */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background: var(--background);
-    color: var(--text-color);
-    line-height: 1.6;
+  font-family: 'Roboto', sans-serif;
+  background: var(--background);
+  color: var(--text-color);
+  line-height: 1.6;
+  transition: background var(--transition-speed), color var(--transition-speed);
 }
 
+/* Capçalera */
 header {
-    color: white;
-    padding: 2rem 1rem;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: relative;
-    overflow: hidden;
-    background: rgba(30, 64, 175, 1);
+  color: var(--on-primary);
+  padding: 2rem 1rem;
+  text-align: center;
+  box-shadow: var(--elevation-2);
+  position: relative;
+  overflow: hidden;
+  background: var(--primary-color);
+  border-radius: 0 0 var(--radius-medium) var(--radius-medium);
+  transition: background var(--transition-speed), box-shadow var(--transition-speed);
 }
 
 .header-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    position: relative;
-    z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
 }
 
 .text-content {
-    margin-right: 1rem;
+  margin-right: 1rem;
 }
 
+/* Perfil */
 .profile-small {
-    display: none;
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 1px solid white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    background-color: white;
+  display: none;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--on-primary);
+  box-shadow: var(--elevation-1);
+  background-color: white;
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.profile-small:hover {
+  transform: scale(1.05);
+  box-shadow: var(--elevation-2);
 }
 
 .profile-large {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    width: 350px;
-    z-index: 100;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 350px;
+  z-index: 100;
+  transition: transform var(--transition-speed);
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
+}
+
+.profile-large:hover {
+  transform: translateY(-10px);
 }
 
 header h1 {
-    position: relative;
-    font-weight: 700;
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    z-index: 1;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  z-index: 1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 header p {
-    position: relative;
-    font-weight: 300;
-    font-size: 1.1rem;
-    z-index: 1;
+  position: relative;
+  font-weight: 300;
+  font-size: 1.1rem;
+  z-index: 1;
 }
 
+/* Navegació */
 nav {
-    margin: 1.5rem auto;
-    text-align: center;
-    padding: 0.5rem;
-    background: var(--card-bg);
-    max-width: 900px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  margin: 1.5rem auto;
+  text-align: center;
+  padding: 0.5rem;
+  background: var(--surface);
+  max-width: 900px;
+  border-radius: var(--radius-medium);
+  box-shadow: var(--elevation-1);
+  transition: background var(--transition-speed), box-shadow var(--transition-speed), transform var(--transition-speed);
+}
+
+nav:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--elevation-2);
 }
 
 .nav-type {
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
 
 .nav-lang {
-    margin-top: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 nav button {
-    margin: 0 0.5rem;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    background: var(--primary-color);
-    color: white;
-    cursor: pointer;
-    border-radius: 6px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    transition: all 0.3s ease;
+  margin: 0 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background: var(--secondary-container);
+  color: var(--on-secondary-container);
+  cursor: pointer;
+  border-radius: var(--radius-small);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  transition: all var(--transition-speed) ease;
+  box-shadow: var(--elevation-1);
 }
 
 nav button.active {
-    background: var(--secondary-color);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: var(--primary-container);
+  color: var(--on-primary-container);
+  transform: translateY(-2px);
+  box-shadow: var(--elevation-2);
 }
 
 nav button:hover {
-    background: var(--secondary-color);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: var(--surface-variant);
+  transform: translateY(-2px);
+  box-shadow: var(--elevation-2);
 }
 
+/* Botó de canvi de mode fosc/clar */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--secondary-container);
+  color: var(--on-secondary-container);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  box-shadow: var(--elevation-2);
+  z-index: 100;
+  transition: background var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: var(--elevation-3);
+}
+
+.theme-toggle i {
+  font-size: 24px;
+  transition: transform var(--transition-speed);
+}
+
+.theme-toggle:hover i {
+  transform: rotate(30deg);
+}
+
+/* Contingut principal */
 section {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background: var(--card-bg);
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--surface);
+  border-radius: var(--radius-large);
+  box-shadow: var(--elevation-2);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+/* Efectes hover per a la secció */
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--elevation-3);
 }
 
 h2 {
-    color: var(--primary-color);
-    font-weight: 600;
-    margin-bottom: 1.2rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--accent-color);
-    display: inline-block;
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--tertiary-color);
+  display: inline-block;
+  transition: color var(--transition-speed), border-bottom var(--transition-speed);
 }
 
 ul {
-    list-style-type: none;
-    padding-left: 0.5rem;
+  list-style-type: none;
+  padding-left: 0.5rem;
 }
 
 ul li {
-    margin-bottom: 0.8rem;
-    position: relative;
-    padding-left: 1.5rem;
+  margin-bottom: 0.8rem;
+  position: relative;
+  padding-left: 1.5rem;
+  transition: transform var(--transition-speed);
+}
+
+ul li:hover {
+  transform: translateX(5px);
 }
 
 ul li::before {
-    content: "•";
-    color: var(--primary-color);
-    font-weight: bold;
-    font-size: 1.2rem;
-    position: absolute;
-    left: 0;
-    top: -0.1rem;
+  content: "•";
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 1.2rem;
+  position: absolute;
+  left: 0;
+  top: -0.1rem;
+  transition: color var(--transition-speed);
 }
 
 ul ul {
-    margin-top: 0.8rem;
-    margin-left: 1rem;
+  margin-top: 0.8rem;
+  margin-left: 1rem;
 }
 
 strong {
-    color: var(--secondary-color);
-    font-weight: 600;
+  color: var(--secondary-color);
+  font-weight: 600;
+  transition: color var(--transition-speed);
 }
 
 p {
-    margin-bottom: 1rem;
-    color: var(--light-text);
-}
-p2 {
-    margin-bottom: 1rem;
-    color: var(--background);
+  margin-bottom: 1rem;
+  color: var(--light-text);
+  transition: color var(--transition-speed);
 }
 
-/* Cover letter specific styles */
+.contact-info {
+  margin-bottom: 1rem;
+  color: var(--on-primary);
+  transition: color var(--transition-speed);
+}
+
+/* Estils específics per a la carta de presentació */
 .date {
-    text-align: right;
-    margin-bottom: 2rem;
-    color: var(--text-color);
+  text-align: right;
+  margin-bottom: 2rem;
+  color: var(--on-surface-variant);
 }
 
 .greeting {
-    font-weight: 500;
-    margin-bottom: 1.5rem;
-    color: var(--text-color);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
 }
 
 .closing {
-    margin-top: 2rem;
-    margin-bottom: 0.5rem;
-    color: var(--text-color);
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
 }
 
 .signature {
-    font-weight: 600;
-    color: var(--secondary-color);
+  font-weight: 600;
+  color: var(--primary-color);
 }
 
+/* Responsive per a dispositius mòbils */
 @media (max-width: 768px) {
-    section {
-        padding: 1.5rem;
-        margin: 1rem;
-    }
+  section {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
 
-    header h1 {
-        font-size: 2rem;
-    }
+  header h1 {
+    font-size: 2rem;
+  }
 
-    header p {
-        font-size: 0.9rem;
-    }
+  header p {
+    font-size: 0.9rem;
+  }
 
-    .profile-small {
-        display: block;
-        width: 80px;
-        height: 80px;
-        margin-left: 1rem;
-    }
+  .profile-small {
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin-left: 1rem;
+  }
 
-    .profile-large {
-        display: none;
-    }
+  .profile-large {
+    display: none;
+  }
 
-    .text-content {
-        text-align: left;
-    }
+  .text-content {
+    text-align: left;
+  }
 
-    .header-content {
-        justify-content: space-between;
-    }
+  .header-content {
+    justify-content: space-between;
+  }
 }
 
+/* Responsive per a dispositius d'escriptori */
 @media (min-width: 769px) {
-    .profile-small {
-        display: none;
-    }
+  .profile-small {
+    display: none;
+  }
 
-    .profile-large {
-        display: block;
-    }
+  .profile-large {
+    display: block;
+  }
 }
