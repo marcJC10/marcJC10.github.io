@@ -36,6 +36,7 @@ const coverLetterContent = {
 <p>Soc estudiant d'Enginyeria Informàtica i Gestió de Sistemes d'Informació al Tecnocampus (UPF) i actualment estic buscant l'oportunitat de realitzar pràctiques professionals per complementar la meva formació acadèmica.</p>
 <p>Al llarg dels meus estudis he desenvolupat habilitats tècniques en diversos llenguatges de programació (Java, Python, JavaScript), tecnologies web (HTML, CSS), gestió de bases de dades (SQL) i sistemes de control de versions (GitHub). També he adquirit coneixements en sistemes operatius, xarxes i seguretat informàtica.</p>
 <p>A més de formació tècnica, compto amb experiència laboral en el sector del servei tècnic en sistemes de seguretat i atenció al client. Aquestes experiències m'han permès desenvolupar habilitats de comunicació, treball en equip i resolució de problemes.</p>
+<p>El camp que més m'interessa és el de la <strong>ciberseguretat</strong>, per la qual cosa preferiblement busco pràctiques en aquest àmbit. La meva experiència en SOC (Centre d'Operacions de Seguretat) i coneixements en SIEM, Threat Hunting i seguretat de xarxes em fan especialment adequat per a aquest tipus de rols.</p>
 <p>Estic especialment interessat en la possibilitat de signar un conveni de pràctiques amb el meu centre universitari per tal de completar la meva formació, i considero que la seva empresa podria ser un bon entorn i una oportunitat per aplicar i ampliar els meus coneixements.</p>
 <p>Des d'aquest portafoli podeu accedir al meu currículum més detalladament.</p>
 <p class="closing">Salut!</p>
@@ -47,6 +48,7 @@ const coverLetterContent = {
 <p>I am a student of Computer Engineering and Information Systems Management at Tecnocampus (UPF) and I am currently looking for an opportunity to undertake professional internships to complement my academic training.</p>
 <p>Through my studies, I have developed technical skills in various programming languages (Java, Python, JavaScript), web technologies (HTML, CSS), database management (SQL), and version control systems (GitHub). I have also acquired knowledge in operating systems, networks, and computer security.</p>
 <p>In addition to my technical training, I have work experience in the security systems technical service sector, as well as in customer service. These experiences have allowed me to develop communication skills, teamwork, and problem-solving abilities.</p>
+<p>The field I am most interested in is <strong>cybersecurity</strong>, which is why I am preferably seeking internships in this area. My experience in SOC (Security Operations Center) and knowledge in SIEM, Threat Hunting, and network security make me particularly suitable for this type of role.</p>
 <p>I am particularly interested in the possibility of signing an internship agreement with my university to complete my university studies, and I believe your company could be an appropriate environment to apply and expand my knowledge.</p>
 <p>From this portfolio you can access a more detailed CV resume about my experience.</p>
 <p class="closing">Sincerely,</p>
@@ -58,6 +60,7 @@ const coverLetterContent = {
 <p>Soy estudiante de Ingeniería Informática y Gestión de Sistemas de Información en Tecnocampus (UPF) y actualmente estoy buscando la oportunidad de realizar prácticas profesionales para complementar mi formación académica.</p>
 <p>A lo largo de mis estudios, he desarrollado habilidades técnicas en diversos lenguajes de programación (Java, Python, JavaScript), tecnologías web (HTML, CSS), gestión de bases de datos (SQL) y sistemas de control de versiones (GitHub). También he adquirido conocimientos en sistemas operativos, redes y seguridad informática.</p>
 <p>Además de mi formación técnica, cuento con experiencia laboral en el sector del servicio técnico en sistemas de seguridad, así como en atención al cliente. Estas experiencias me han permitido desarrollar habilidades de comunicación, trabajo en equipo y resolución de problemas.</p>
+<p>El campo que más me interesa es el de la <strong>ciberseguridad</strong>, por lo que preferiblemente busco prácticas en este ámbito. Mi experiencia en SOC (Centro de Operaciones de Seguridad) y conocimientos en SIEM, Threat Hunting y seguridad de redes me hacen especialmente adecuado para este tipo de roles.</p>
 <p>Estoy especialmente interesado en la posibilidad de firmar un convenio de prácticas con mi centro universitario para poner punto final a mi formación universitaria, y considero que su empresa podría ser un entorno adecuado así como una oportunidad de aplicar y ampliar mis conocimientos.</p>
 <p>Desde este portafolio pueden acceder a mi currículum con más detalle.</p>
 <p class="closing">Atentamente,</p>
@@ -96,7 +99,8 @@ const cvContent = {
   <li><strong>Private tutoring for over 5 years</strong> – Languages (Catalan, Spanish, English), mathematics and general academic support (Primary, Secondary, Baccalaureate).</li>
   <li><strong>Kitchen staff in a restaurant</strong> – Summer season 2021.</li>
   <li><strong>Waiter</strong> – From May to November 2022.</li>
-  <li><strong>Technical support at GSSecurity</strong> – Intrusion systems and CCTV (From June 2023 to present).</li>
+  <li><strong>Technical support at GSSecurity</strong> – Intrusion systems and CCTV - From June 2023 to June 2025.</li>
+  <li><strong>Capgemini - Cybersecurity SOC Intern (GP)</strong> – Security Operations Center internship.</li>
 </ul>
 <h2>‣ Aspiration</h2>
 <p>I am a young and proactive person, eager to work to finance my studies, which are currently my main focus during the academic year.<br><br>
@@ -118,21 +122,47 @@ I would be delighted to collaborate with your company, bringing my resources, kn
   </li>
   <li><strong>Skills and Competencies:</strong>
     <ul>
-      <li>Team-oriented professional with strong interpersonal and communication skills.</li>
-      <li>Proficiency with computers and other digital devices.</li>
-      <li>Experience with Operating Systems: Linux, Windows, macOS, iOS, and Android.</li>
-      <li>Positive attitude and willingness to work.</li>
-      <li>Java Development.</li>
-      <li>Springboot.</li>
-      <li>Python Development.</li>
-      <li>Github.</li>
-      <li>Docker.</li>
-      <li>Management, Design, & Creation of relational SQL DB.</li>
-      <li>MongoDB.</li>
-      <li>WordPress and other CMS.</li>
-      <li>HTML, CSS & JavaScript.</li>
-      <li>Network Fundamentals, Network Access, IP Connectivity, IP Services, firewalls, DNS, LAN, WAN.</li>
-      <li>Familiarity with software implementation methodologies such as Waterfall, Agile, Lean, and Scrum.</li>
+      <li><strong>Programming & Development:</strong>
+        <ul>
+          <li>Java Development.</li>
+          <li>Springboot.</li>
+          <li>Python Development.</li>
+          <li>HTML, CSS & JavaScript.</li>
+          <li>Github.</li>
+          <li>Docker.</li>
+        </ul>
+      </li>
+      <li><strong>Database Management:</strong>
+        <ul>
+          <li>Management, Design, & Creation of relational and non-relational DB.</li>
+          <li>MongoDB.</li>
+          <li>SQL.</li>
+        </ul>
+      </li>
+      <li><strong>Cybersecurity & Network:</strong>
+        <ul>
+          <li>SOC Experience (Security Operations Center).</li>
+          <li>SIEM (Security Information and Event Management).</li>
+          <li>Threat Hunting.</li>
+          <li>Firewalls configuration and management.</li>
+          <li>Network Security.</li>
+          <li>Network Fundamentals, Network Access, IP Connectivity, IP Services, DNS, LAN, WAN.</li>
+        </ul>
+      </li>
+      <li><strong>Systems & Platforms:</strong>
+        <ul>
+          <li>Experience with Operating Systems: Linux, Windows, macOS, iOS, and Android.</li>
+          <li>WordPress and other CMS.</li>
+        </ul>
+      </li>
+      <li><strong>Methodologies & Soft Skills:</strong>
+        <ul>
+          <li>Team-oriented professional with strong interpersonal and communication skills.</li>
+          <li>Proficiency with computers and other digital devices.</li>
+          <li>Positive attitude and willingness to work.</li>
+          <li>Familiarity with software implementation methodologies such as Waterfall, Agile, Lean, and Scrum.</li>
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>`,
@@ -165,7 +195,8 @@ I would be delighted to collaborate with your company, bringing my resources, kn
   <li><strong>Clases particulares durante más de 5 años</strong> – Idiomas (Catalán, Castellano, Inglés), matemáticas y apoyo general (Primaria, ESO, Bachillerato).</li>
   <li><strong>Equipo de cocina en un restaurante</strong> – Temporada de verano 2021.</li>
   <li><strong>Camarero</strong> – De mayo a noviembre 2022.</li>
-  <li><strong>Servicio técnico en GSSecurity</strong> – Sistemas de intrusión y CCTV (Desde junio 2023 hasta la actualidad).</li>
+  <li><strong>Servicio técnico en GSSecurity</strong> – Sistemas de intrusión y CCTV - De junio 2023 a junio 2025.</li>
+  <li><strong>Prácticas en SOC de Ciberseguridad (GP)</strong> – Prácticas en Centro de Operaciones de Seguridad.</li>
 </ul>
 <h2>‣ Aspiración</h2>
 <p>Soy una persona joven y con iniciativa, y estoy deseando trabajar para financiar mis estudios, que actualmente son mi actividad principal durante el curso académico.<br><br>
@@ -187,21 +218,47 @@ Estaría encantado de poder colaborar con su empresa, poniendo mis recursos, con
   </li>
   <li><strong>Habilidades y Competencias:</strong>
     <ul>
-      <li>Trabajo en equipo y buena comunicación.</li>
-      <li>Dominio de ordenadores y otros dispositivos informáticos.</li>
-      <li>Dominio de los Sistemas Operativos Linux, Windows, MacOS, iOS y Android.</li>
-      <li>Actitud positiva y con ganas de trabajar.</li>
-      <li>Desarrollo en Java.</li>
-      <li>Springboot.</li>
-      <li>Desarrollo en Python.</li>
-      <li>Github.</li>
-      <li>Docker.</li>
-      <li>Administración, Diseño y Creación de Bases de datos relacionales SQL.</li>
-      <li>MongoDB.</li>
-      <li>WordPress y otros CMS.</li>
-      <li>HTML, CSS & JavaScript.</li>
-      <li>Fundamentos de Redes, Acceso a Redes, Conectividad IP, Servicios IP, firewalls, DNS, LAN, WAN.</li>
-      <li>Familiaridad con procesos de implementación de software como Waterfall, Agile, Lean, y Scrum.</li>
+      <li><strong>Programación y Desarrollo:</strong>
+        <ul>
+          <li>Desarrollo en Java.</li>
+          <li>Springboot.</li>
+          <li>Desarrollo en Python.</li>
+          <li>HTML, CSS & JavaScript.</li>
+          <li>Github.</li>
+          <li>Docker.</li>
+        </ul>
+      </li>
+      <li><strong>Gestión de Bases de Datos:</strong>
+        <ul>
+          <li>Administración, Diseño y Creación de Bases de datos relacionales y no relacionales.</li>
+          <li>MongoDB.</li>
+          <li>SQL.</li>
+        </ul>
+      </li>
+      <li><strong>Ciberseguridad y Redes:</strong>
+        <ul>
+          <li>Experiencia SOC (Centro de Operaciones de Seguridad).</li>
+          <li>SIEM (Gestión de Información y Eventos de Seguridad).</li>
+          <li>Threat Hunting (Caza de Amenazas).</li>
+          <li>Configuración y gestión de firewalls.</li>
+          <li>Seguridad de redes.</li>
+          <li>Fundamentos de Redes, Acceso a Redes, Conectividad IP, Servicios IP, DNS, LAN, WAN.</li>
+        </ul>
+      </li>
+      <li><strong>Sistemas y Plataformas:</strong>
+        <ul>
+          <li>Dominio de los Sistemas Operativos Linux, Windows, MacOS, iOS y Android.</li>
+          <li>WordPress y otros CMS.</li>
+        </ul>
+      </li>
+      <li><strong>Metodologías y Habilidades Blandas:</strong>
+        <ul>
+          <li>Trabajo en equipo y buena comunicación.</li>
+          <li>Dominio de ordenadores y otros dispositivos informáticos.</li>
+          <li>Actitud positiva y con ganas de trabajar.</li>
+          <li>Familiaridad con procesos de implementación de software como Waterfall, Agile, Lean, y Scrum.</li>
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>`,
@@ -235,7 +292,8 @@ Estaría encantado de poder colaborar con su empresa, poniendo mis recursos, con
   <li><strong>Classes particulars durant més de 5 anys</strong> – Idiomes (Català, Castellà, Anglès), matemàtiques i suport general (Primària, ESO, Batxillerat).</li>
   <li><strong>Equip de cuina a un restaurant</strong> – Temporada d'Estiu 2021.</li>
   <li><strong>Cambrer</strong> – De maig a novembre 2022.</li>
-  <li><strong>Servei tècnic a GSSecurity</strong> – Sistemes d'intrusió i CCTV (Des de juny 2023 fins a l'actualitat).</li>
+  <li><strong>Servei tècnic a GSSecurity</strong> – Sistemes d'intrusió i CCTV - De juny 2023 a juny 2025.</li>
+  <li><strong>Pràctiques en SOC de Ciberseguretat (GP)</strong> – Pràctiques en Centre d'Operacions de Seguretat.</li>
 </ul>
 <h2>‣ Aspiració</h2>
 <p>Soc una persona jove i amb iniciativa, i estic desitjant treballar per finançar els meus estudis, que actualment són la meva activitat principal durant el curs acadèmic.<br><br>
@@ -257,21 +315,47 @@ Estaria encantat de poder col·laborar amb la seva empresa, posant els meus recu
   </li>
   <li><strong>Habilitats i Competències:</strong>
     <ul>
-      <li>Treball en equip i bona comunicació</li>
-      <li>Domini dels ordinadors i altres dispositius informàtics.</li>
-      <li>Domini dels Sistemes Operatius Linux, Windows, MacOS, iOS, i Android.</li>
-      <li>Actitud positiva i amb ganes de treballar.</li>
-      <li>Desenvolupament en Java.</li>
-      <li>Springboot.</li>
-      <li>Desenvolupament en Python.</li>
-      <li>Github.</li>
-      <li>Docker.</li>
-      <li>Administració, Disseny i creació de Bases de dades relacionals SQL.</li>
-      <li>MongoDB.</li>
-      <li>WordPress i altres CMS.</li>
-      <li>HTML, CSS & JavaScript.</li>
-      <li>Network Fundamentals, Network Access, IP Connectivity, IP Services, firewalls, DNS, LAN, WAN.</li>
-      <li>Familiaritat amb processos d'implementació de software com Waterfall, Agile, Lean, i Scrum.</li>
+      <li><strong>Programació i Desenvolupament:</strong>
+        <ul>
+          <li>Desenvolupament en Java.</li>
+          <li>Springboot.</li>
+          <li>Desenvolupament en Python.</li>
+          <li>HTML, CSS & JavaScript.</li>
+          <li>Github.</li>
+          <li>Docker.</li>
+        </ul>
+      </li>
+      <li><strong>Gestió de Bases de Dades:</strong>
+        <ul>
+          <li>Administració, Disseny i creació de Bases de dades relacionals i no relacionals.</li>
+          <li>MongoDB.</li>
+          <li>SQL.</li>
+        </ul>
+      </li>
+      <li><strong>Ciberseguretat i Xarxes:</strong>
+        <ul>
+          <li>Experiència SOC (Centre d'Operacions de Seguretat).</li>
+          <li>SIEM (Gestió d'Informació i Esdeveniments de Seguretat).</li>
+          <li>Threat Hunting (Caça d'Amenaces).</li>
+          <li>Configuració i gestió de firewalls.</li>
+          <li>Seguretat de xarxes.</li>
+          <li>Network Fundamentals, Network Access, IP Connectivity, IP Services, DNS, LAN, WAN.</li>
+        </ul>
+      </li>
+      <li><strong>Sistemes i Plataformes:</strong>
+        <ul>
+          <li>Domini dels Sistemes Operatius Linux, Windows, MacOS, iOS, i Android.</li>
+          <li>WordPress i altres CMS.</li>
+        </ul>
+      </li>
+      <li><strong>Metodologies i Habilitats Toves:</strong>
+        <ul>
+          <li>Treball en equip i bona comunicació.</li>
+          <li>Domini dels ordinadors i altres dispositius informàtics.</li>
+          <li>Actitud positiva i amb ganes de treballar.</li>
+          <li>Familiaritat amb processos d'implementació de software com Waterfall, Agile, Lean, i Scrum.</li>
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>`
