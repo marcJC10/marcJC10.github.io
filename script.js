@@ -149,13 +149,25 @@ I would be delighted to collaborate with your company, bringing my resources, kn
           <li>Network Fundamentals, Network Access, IP Connectivity, IP Services, DNS, LAN, WAN.</li>
         </ul>
       </li>
+      <li><strong>Microsoft Power BI:</strong>
+        <ul>
+          <li>Data modeling (star schema, relationships, fact and dimension tables).</li>
+          <li>Design and implementation of relational semantic models.</li>
+          <li>Creation of measures and KPIs using DAX.</li>
+          <li>Design of interactive dashboards and advanced visualizations.</li>
+          <li>Implementation of Row-Level Security (RLS).</li>
+          <li>Publishing and automation with Power BI Service.</li>
+          <li>Connection to REST APIs and databases (SQL, NoSQL, cloud and on-premise).</li>
+          <li>ETL transformation and automation using Power Query (M).</li>
+        </ul>
+      </li>
       <li><strong>Systems & Platforms:</strong>
         <ul>
           <li>Experience with Operating Systems: Linux, Windows, macOS, iOS, and Android.</li>
           <li>WordPress and other CMS.</li>
         </ul>
       </li>
-      <li><strong>Methodologies & Soft Skills:</strong>
+      <li><strong>Methodologies & Skills:</strong>
         <ul>
           <li>Team-oriented professional with strong interpersonal and communication skills.</li>
           <li>Proficiency with computers and other digital devices.</li>
@@ -245,13 +257,25 @@ Estaría encantado de poder colaborar con su empresa, poniendo mis recursos, con
           <li>Fundamentos de Redes, Acceso a Redes, Conectividad IP, Servicios IP, DNS, LAN, WAN.</li>
         </ul>
       </li>
+      <li><strong>Microsoft Power BI:</strong>
+        <ul>
+          <li>Modelado de datos.</li>
+          <li>Diseño e implementación de modelos semánticos relacionales.</li>
+          <li>Creación de medidas y KPIs con DAX.</li>
+          <li>Diseño de dashboards interactivos y visuales avanzados.</li>
+          <li>Implementación de Row-Level Security (RLS).</li>
+          <li>Publicación y automatización con Power BI Service.</li>
+          <li>Conexión a APIs REST y bases de datos (SQL, NoSQL, cloud y on-premise).</li>
+          <li>Transformación y automatización ETL con Power Query (M).</li>
+        </ul>
+      </li>
       <li><strong>Sistemas y Plataformas:</strong>
         <ul>
           <li>Dominio de los Sistemas Operativos Linux, Windows, MacOS, iOS y Android.</li>
           <li>WordPress y otros CMS.</li>
         </ul>
       </li>
-      <li><strong>Metodologías y Habilidades Blandas:</strong>
+      <li><strong>Metodologías y Habilidades:</strong>
         <ul>
           <li>Trabajo en equipo y buena comunicación.</li>
           <li>Dominio de ordenadores y otros dispositivos informáticos.</li>
@@ -342,13 +366,25 @@ Estaria encantat de poder col·laborar amb la seva empresa, posant els meus recu
           <li>Network Fundamentals, Network Access, IP Connectivity, IP Services, DNS, LAN, WAN.</li>
         </ul>
       </li>
+      <li><strong>Microsoft Power BI:</strong>
+        <ul>
+          <li>Modelat de dades.</li>
+          <li>Disseny i implementació de models semàntics relacionals.</li>
+          <li>Creació de mesures i KPIs amb DAX.</li>
+          <li>Disseny de dashboards interactius i visuals avançats.</li>
+          <li>Implementació de Row-Level Security (RLS).</li>
+          <li>Publicació i automatització amb Power BI Service.</li>
+          <li>Connexió a APIs REST i bases de dades (SQL, NoSQL, cloud i on-premise).</li>
+          <li>Transformació i automatització ETL amb Power Query (M).</li>
+        </ul>
+      </li>
       <li><strong>Sistemes i Plataformes:</strong>
         <ul>
           <li>Domini dels Sistemes Operatius Linux, Windows, MacOS, iOS, i Android.</li>
           <li>WordPress i altres CMS.</li>
         </ul>
       </li>
-      <li><strong>Metodologies i Habilitats Toves:</strong>
+      <li><strong>Metodologies i Habilitats:</strong>
         <ul>
           <li>Treball en equip i bona comunicació.</li>
           <li>Domini dels ordinadors i altres dispositius informàtics.</li>
