@@ -70,7 +70,7 @@ const coverLetterContent = {
 // Variables CV
 const cvContent = {
   en: `<h2>‣ Personal Information</h2>
-<p>Nationality: Spain<br>Date of Birth: 20/02/2002<br>Gender: Male</p>
+<p>Nationality: Spain<br>Year of Birth: 2002<br>Gender: Male</p>
 <h2>‣ Education</h2>
 <ul>
   <li><strong>La Presentació School</strong>, Arenys de Mar, Barcelona
@@ -179,7 +179,7 @@ I would be delighted to collaborate with your company, bringing my resources, kn
   </li>
 </ul>`,
   es: `<h2>‣ Información Personal</h2>
-<p>Nacionalidad: España<br>Fecha de nacimiento: 20/02/2002<br>Género: Masculino</p>
+<p>Nacionalidad: España<br>Año de nacimiento: 2002<br>Género: Masculino</p>
 <h2>‣ Formación</h2>
 <ul>
   <li><strong>Escuela La Presentación</strong>, Arenys de Mar, Barcelona
@@ -287,7 +287,7 @@ Estaría encantado de poder colaborar con su empresa, poniendo mis recursos, con
   </li>
 </ul>`,
   ca: `<h2>‣ Informació Personal</h2>
-<p>Nacionalitat: Espanya<br>Data de naixement: 20/02/2002<br>Gènere: Masculí</p>
+<p>Nacionalitat: Espanya<br>Any de naixement: 2002<br>Gènere: Masculí</p>
 <h2>‣ Formació</h2>
 <ul>
   <li><strong>Escola La Presentació</strong>, Arenys de Mar, Barcelona
