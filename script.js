@@ -40,7 +40,7 @@ const coverLetterContent = {
 <p>Estic especialment interessat en la possibilitat de signar un conveni de pràctiques amb el meu centre universitari per tal de completar la meva formació, i considero que la seva empresa podria ser un bon entorn i una oportunitat per aplicar i ampliar els meus coneixements.</p>
 <p>Des d'aquest portafoli podeu accedir al meu currículum més detalladament.</p>
 <p class="closing">Salut!</p>
-<p class="signature">Marc Jiménez Comí</p>`,
+<p class="signature">Marc Jiménez</p>`,
   
   en: `<h2>‣ Cover Letter</h2>
 <p class="date">Barcelona, 2025</p>
@@ -52,7 +52,7 @@ const coverLetterContent = {
 <p>I am particularly interested in the possibility of signing an internship agreement with my university to complete my university studies, and I believe your company could be an appropriate environment to apply and expand my knowledge.</p>
 <p>From this portfolio you can access a more detailed CV resume about my experience.</p>
 <p class="closing">Sincerely,</p>
-<p class="signature">Marc Jiménez Comí</p>`,
+<p class="signature">Marc Jiménez</p>`,
   
   es: `<h2>‣ Carta de Presentación</h2>
 <p class="date">Barcelona, 2025</p>
@@ -64,7 +64,7 @@ const coverLetterContent = {
 <p>Estoy especialmente interesado en la posibilidad de firmar un convenio de prácticas con mi centro universitario para poner punto final a mi formación universitaria, y considero que su empresa podría ser un entorno adecuado así como una oportunidad de aplicar y ampliar mis conocimientos.</p>
 <p>Desde este portafolio pueden acceder a mi currículum con más detalle.</p>
 <p class="closing">Atentamente,</p>
-<p class="signature">Marc Jiménez Comí</p>`
+<p class="signature">Marc Jiménez</p>`
 };
 
 // Variables CV
