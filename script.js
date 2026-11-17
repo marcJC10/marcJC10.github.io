@@ -1,473 +1,585 @@
-// Variables d'estat actual
-let currentType = 'coverLetter';
-let currentLang = 'ca';
-let darkMode = false;
+// =====================================================================
+//  CONTINGUT
+//  Tot el text del portafoli és aquí, separat per idioma (ca / es / en).
+//  Per actualitzar el CV només cal editar aquestes dades.
+// =====================================================================
 
-// Text dels botons en funció de la llengua sel·leccionada
-const buttonLabels = {
+const LINKEDIN_URL = 'https://www.linkedin.com/in/mjimenezco/';
+const CISCO_URL = 'https://www.credly.com/badges/af87229f-c94b-4167-ab92-44983c37a5e1';
+const PROJECT_URL = 'https://llibreta-ai.vercel.app/';
+
+const content = {
+  // ------------------------------------------------------------------ CA
   ca: {
-    coverLetter: "Carta de Presentació",
-    cv: "Currículum",
-    ca: "Català",
-    en: "Anglès",
-    es: "Castellà"
+    ui: {
+      role: 'Enginyer de Ciberseguretat · Capgemini',
+      cv: 'Currículum',
+      coverLetter: 'Carta de presentació',
+      print: 'Descarrega PDF',
+      summary: 'Perfil',
+      experience: 'Experiència',
+      education: 'Formació',
+      certifications: 'Certificacions',
+      skills: 'Competències',
+      languages: 'Idiomes',
+      other: 'Altres experiències',
+      project: 'Projecte personal',
+      testers: 'Busco testers per publicar-la a Google Play',
+      visit: 'Fes-te tester',
+      tools: 'Eines'
+    },
+    summary: `Enginyer de ciberseguretat a <strong>Capgemini</strong> amb un any i mig d'experiència en serveis de seguretat per a clients corporatius. Actualment gestiono el <strong>servei d'excepcions de seguretat</strong> d'un client i porto el seu <strong>servei d'evolució i transformació</strong>. Combino gestió de projectes, automatització de processos (Power Automate) i anàlisi de dades (Power BI) amb una base pràctica en sistemes de seguretat i xarxes. El meu interès professional se centra en l'<strong>arquitectura i l'auditoria de ciberseguretat</strong>, més que no pas en el desenvolupament de software.`,
+    experience: [
+      {
+        company: 'Capgemini',
+        meta: 'Barcelona · Híbrid',
+        roles: [
+          {
+            title: 'Enginyer de Ciberseguretat',
+            period: 'abr. 2026 – actualitat',
+            type: 'Jornada completa',
+            current: true,
+            bullets: [
+              "Gestió del servei d'excepcions de seguretat per a un client corporatiu: anàlisi, tramitació i seguiment de les sol·licituds d'excepció.",
+              "Responsable del servei d'evolució i transformació: millora contínua i automatització dels processos del servei.",
+              'Seguiment operatiu i reporting amb eines ITSM i dashboards de servei.'
+            ],
+            tools: ['ITSM', 'Dashboards de servei', 'Power Automate', 'Power BI', 'Microsoft 365']
+          },
+          {
+            title: 'Cybersecurity Trainee',
+            period: 'juny 2025 – març 2026',
+            type: 'Contracte de pràctiques',
+            bullets: [
+              "Gestió de projectes de ciberseguretat per a un client dins d'un Centre d'Operacions de Seguretat (SOC).",
+              'Desenvolupament d\'una eina d\'automatització amb Power Automate per a la gestió de projectes.',
+              'Disseny de dashboards de seguiment i KPIs amb Power BI.'
+            ],
+            tools: ['Power Automate', 'Power BI', 'Microsoft 365']
+          }
+        ]
+      },
+      {
+        company: 'GSS Security',
+        meta: 'Mataró · Presencial',
+        roles: [
+          {
+            title: 'Servei tècnic',
+            period: 'juny 2023 – juny 2025',
+            type: 'Jornada parcial',
+            bullets: [
+              "Suport tècnic a clients i a tècnics de camp en sistemes d'intrusió (alarmes antirobatori) i CCTV.",
+              'Instal·lació, manteniment i configuració de sistemes, incloent-hi xarxa i enregistradors (NVR).',
+              "Gestió i seguiment d'incidències amb el sistema de tiquets."
+            ],
+            tools: ['Alarmes', 'CCTV', 'NVR', 'Xarxes', 'Ticketing']
+          }
+        ]
+      }
+    ],
+    project: {
+      name: 'LlibretaAI',
+      tagline: "App Android de notes de veu que transcriu i resumeix classes i reunions amb IA que s'executa al mateix dispositiu.",
+      bullets: [
+        "Arquitectura privada per disseny: l'àudio i les notes no surten mai del mòbil. Sense servidors, comptes, anuncis, seguiment ni analítica.",
+        'Funciona sense connexió un cop descarregats els models.',
+        'Resums, mapes mentals, llistes de tasques, separació de parlants i preguntes sobre les notes.',
+        'En beta tancada a Google Play.'
+      ]
+    },
+    other: 'Classes particulars de llengües i matemàtiques (més de 5 anys) · Hostaleria: cuina (estiu 2021) i sala (maig – nov. 2022).',
+    education: [
+      {
+        title: "Grau en Enginyeria Informàtica i Gestió de Sistemes d'Informació",
+        place: 'Tecnocampus (UPF) · Mataró',
+        period: '2020 – des. 2026 (previst)',
+        note: 'TFG finalitzat.'
+      },
+      {
+        title: 'Batxillerat Científic-Tecnològic',
+        place: 'Escola La Presentació · Arenys de Mar',
+        period: '2020'
+      },
+      {
+        title: 'Dual Diploma – American High School Diploma',
+        place: 'Academica International Studies',
+        period: '2016 – 2020'
+      }
+    ],
+    certifications: [
+      { title: 'Junior Cybersecurity Analyst Career Path', issuer: 'Cisco · oct. 2025', url: CISCO_URL },
+      { title: 'CompTIA Security+', issuer: 'En preparació', pending: true },
+      { title: '360 LPT – Anglès B2', issuer: 'Equivalent a Cambridge FCE · 2021' }
+    ],
+    skills: [
+      { group: 'Ciberseguretat', items: ["Gestió d'excepcions de seguretat", 'Ciberdefensa', 'Seguretat de la informació', 'Seguretat de xarxes'] },
+      { group: 'Gestió i servei', items: ['Gestió de projectes', 'Eines ITSM', 'Gestió de serveis', 'Agile / Scrum', 'Lean', 'Waterfall'] },
+      { group: 'Automatització i dades', items: ['Power Automate', 'Power BI', 'DAX', 'Power Query (M)', 'Row-Level Security', 'APIs REST', 'ETL'] },
+      { group: 'Bases de dades', items: ['SQL', 'MongoDB', 'Disseny relacional i NoSQL'] },
+      { group: 'Xarxes i sistemes', items: ['LAN / WAN', 'IP · DNS', 'Linux', 'Windows', 'macOS', 'CCTV / NVR'] },
+      { group: 'Desenvolupament', items: ['Java', 'Spring Boot', 'Python', 'HTML / CSS / JavaScript', 'Git / GitHub', 'Docker'] }
+    ],
+    languages: [
+      { name: 'Català', level: 'Nadiu', pct: 100 },
+      { name: 'Castellà', level: 'Nadiu', pct: 100 },
+      { name: 'Anglès', level: 'Avançat (B2)', pct: 80 },
+      { name: 'Francès', level: 'Bàsic', pct: 20 }
+    ],
+    letter: {
+      date: 'Barcelona, 2026',
+      greeting: 'Benvolgut/da,',
+      body: [
+        "Soc <strong>enginyer de ciberseguretat a Capgemini</strong>, on treballo des del juny de 2025. Vaig començar com a trainee en un Centre d'Operacions de Seguretat (SOC), gestionant projectes de ciberseguretat per a un client, i des de l'abril de 2026 formo part de l'equip a jornada completa: gestiono el servei d'excepcions de seguretat d'un client i porto el seu servei d'evolució i transformació.",
+        "En aquest temps he après a moure'm entre la part tècnica i la de gestió: coordinar-me amb el client, fer el seguiment del servei amb eines ITSM, i automatitzar processos amb Power Automate i Power BI per reduir feina manual i donar visibilitat a l'estat del servei.",
+        "Abans, durant dos anys, vaig fer de servei tècnic a GSS Security, donant suport a clients i a tècnics de camp en sistemes d'alarma, CCTV i xarxa. Aquella etapa em va donar una base pràctica sòlida i molta experiència resolent incidències amb el client al davant.",
+        "Estic acabant el grau en Enginyeria Informàtica i Gestió de Sistemes d'Informació al Tecnocampus (UPF), amb el TFG ja finalitzat. He obtingut el <strong>Junior Cybersecurity Analyst Career Path</strong> de Cisco i estic preparant la certificació <strong>CompTIA Security+</strong>.",
+        "Pel meu compte he creat <strong>LlibretaAI</strong>, una app Android de notes de veu amb IA que funciona íntegrament al mòbil, dissenyada perquè les dades de l'usuari no surtin mai del dispositiu. Ara és en beta tancada i busco testers per publicar-la a Google Play.",
+        "Professionalment, on em vull especialitzar és en l'<strong>arquitectura i l'auditoria de ciberseguretat</strong>, més que no pas en el desenvolupament de software. Al currículum en trobareu el detall."
+      ],
+      closing: 'Salutacions cordials,'
+    }
   },
-  en: {
-    coverLetter: "Cover Letter",
-    cv: "Resume",
-    ca: "Catalan",
-    en: "English",
-    es: "Spanish"
-  },
+
+  // ------------------------------------------------------------------ ES
   es: {
-    coverLetter: "Carta de Presentación",
-    cv: "Currículum",
-    ca: "Catalán",
-    en: "Inglés",
-    es: "Español"
+    ui: {
+      role: 'Ingeniero de Ciberseguridad · Capgemini',
+      cv: 'Currículum',
+      coverLetter: 'Carta de presentación',
+      print: 'Descargar PDF',
+      summary: 'Perfil',
+      experience: 'Experiencia',
+      education: 'Formación',
+      certifications: 'Certificaciones',
+      skills: 'Competencias',
+      languages: 'Idiomas',
+      other: 'Otras experiencias',
+      project: 'Proyecto personal',
+      testers: 'Busco testers para publicarla en Google Play',
+      visit: 'Hazte tester',
+      tools: 'Herramientas'
+    },
+    summary: `Ingeniero de ciberseguridad en <strong>Capgemini</strong> con año y medio de experiencia en servicios de seguridad para clientes corporativos. Actualmente gestiono el <strong>servicio de excepciones de seguridad</strong> de un cliente y llevo su <strong>servicio de evolución y transformación</strong>. Combino gestión de proyectos, automatización de procesos (Power Automate) y análisis de datos (Power BI) con una base práctica en sistemas de seguridad y redes. Mi interés profesional se centra en la <strong>arquitectura y la auditoría de ciberseguridad</strong>, más que en el desarrollo de software.`,
+    experience: [
+      {
+        company: 'Capgemini',
+        meta: 'Barcelona · Híbrido',
+        roles: [
+          {
+            title: 'Ingeniero de Ciberseguridad',
+            period: 'abr. 2026 – actualidad',
+            type: 'Jornada completa',
+            current: true,
+            bullets: [
+              'Gestión del servicio de excepciones de seguridad para un cliente corporativo: análisis, tramitación y seguimiento de las solicitudes de excepción.',
+              'Responsable del servicio de evolución y transformación: mejora continua y automatización de los procesos del servicio.',
+              'Seguimiento operativo y reporting con herramientas ITSM y dashboards de servicio.'
+            ],
+            tools: ['ITSM', 'Dashboards de servicio', 'Power Automate', 'Power BI', 'Microsoft 365']
+          },
+          {
+            title: 'Cybersecurity Trainee',
+            period: 'jun. 2025 – mar. 2026',
+            type: 'Contrato de prácticas',
+            bullets: [
+              'Gestión de proyectos de ciberseguridad para un cliente dentro de un Centro de Operaciones de Seguridad (SOC).',
+              'Desarrollo de una herramienta de automatización con Power Automate para la gestión de proyectos.',
+              'Diseño de dashboards de seguimiento y KPIs con Power BI.'
+            ],
+            tools: ['Power Automate', 'Power BI', 'Microsoft 365']
+          }
+        ]
+      },
+      {
+        company: 'GSS Security',
+        meta: 'Mataró · Presencial',
+        roles: [
+          {
+            title: 'Servicio técnico',
+            period: 'jun. 2023 – jun. 2025',
+            type: 'Jornada parcial',
+            bullets: [
+              'Soporte técnico a clientes y a técnicos de campo en sistemas de intrusión (alarmas antirrobo) y CCTV.',
+              'Instalación, mantenimiento y configuración de sistemas, incluyendo red y grabadores (NVR).',
+              'Gestión y seguimiento de incidencias con el sistema de tickets.'
+            ],
+            tools: ['Alarmas', 'CCTV', 'NVR', 'Redes', 'Ticketing']
+          }
+        ]
+      }
+    ],
+    project: {
+      name: 'LlibretaAI',
+      tagline: 'App Android de notas de voz que transcribe y resume clases y reuniones con IA que se ejecuta en el propio dispositivo.',
+      bullets: [
+        'Arquitectura privada por diseño: el audio y las notas nunca salen del móvil. Sin servidores, cuentas, anuncios, seguimiento ni analítica.',
+        'Funciona sin conexión una vez descargados los modelos.',
+        'Resúmenes, mapas mentales, listas de tareas, separación de hablantes y preguntas sobre las notas.',
+        'En beta cerrada en Google Play.'
+      ]
+    },
+    other: 'Clases particulares de idiomas y matemáticas (más de 5 años) · Hostelería: cocina (verano 2021) y sala (mayo – nov. 2022).',
+    education: [
+      {
+        title: 'Grado en Ingeniería Informática y Gestión de Sistemas de Información',
+        place: 'Tecnocampus (UPF) · Mataró',
+        period: '2020 – dic. 2026 (previsto)',
+        note: 'TFG finalizado.'
+      },
+      {
+        title: 'Bachillerato Científico-Tecnológico',
+        place: 'Escola La Presentació · Arenys de Mar',
+        period: '2020'
+      },
+      {
+        title: 'Dual Diploma – American High School Diploma',
+        place: 'Academica International Studies',
+        period: '2016 – 2020'
+      }
+    ],
+    certifications: [
+      { title: 'Junior Cybersecurity Analyst Career Path', issuer: 'Cisco · oct. 2025', url: CISCO_URL },
+      { title: 'CompTIA Security+', issuer: 'En preparación', pending: true },
+      { title: '360 LPT – Inglés B2', issuer: 'Equivalente a Cambridge FCE · 2021' }
+    ],
+    skills: [
+      { group: 'Ciberseguridad', items: ['Gestión de excepciones de seguridad', 'Ciberdefensa', 'Seguridad de la información', 'Seguridad de redes'] },
+      { group: 'Gestión y servicio', items: ['Gestión de proyectos', 'Herramientas ITSM', 'Gestión de servicios', 'Agile / Scrum', 'Lean', 'Waterfall'] },
+      { group: 'Automatización y datos', items: ['Power Automate', 'Power BI', 'DAX', 'Power Query (M)', 'Row-Level Security', 'APIs REST', 'ETL'] },
+      { group: 'Bases de datos', items: ['SQL', 'MongoDB', 'Diseño relacional y NoSQL'] },
+      { group: 'Redes y sistemas', items: ['LAN / WAN', 'IP · DNS', 'Linux', 'Windows', 'macOS', 'CCTV / NVR'] },
+      { group: 'Desarrollo', items: ['Java', 'Spring Boot', 'Python', 'HTML / CSS / JavaScript', 'Git / GitHub', 'Docker'] }
+    ],
+    languages: [
+      { name: 'Catalán', level: 'Nativo', pct: 100 },
+      { name: 'Castellano', level: 'Nativo', pct: 100 },
+      { name: 'Inglés', level: 'Avanzado (B2)', pct: 80 },
+      { name: 'Francés', level: 'Básico', pct: 20 }
+    ],
+    letter: {
+      date: 'Barcelona, 2026',
+      greeting: 'Estimado/a:',
+      body: [
+        'Soy <strong>ingeniero de ciberseguridad en Capgemini</strong>, donde trabajo desde junio de 2025. Empecé como trainee en un Centro de Operaciones de Seguridad (SOC), gestionando proyectos de ciberseguridad para un cliente, y desde abril de 2026 formo parte del equipo a jornada completa: gestiono el servicio de excepciones de seguridad de un cliente y llevo su servicio de evolución y transformación.',
+        'En este tiempo he aprendido a moverme entre la parte técnica y la de gestión: coordinarme con el cliente, hacer el seguimiento del servicio con herramientas ITSM, y automatizar procesos con Power Automate y Power BI para reducir trabajo manual y dar visibilidad al estado del servicio.',
+        'Antes, durante dos años, trabajé en el servicio técnico de GSS Security, dando soporte a clientes y a técnicos de campo en sistemas de alarma, CCTV y red. Aquella etapa me dio una base práctica sólida y mucha experiencia resolviendo incidencias de cara al cliente.',
+        'Estoy terminando el grado en Ingeniería Informática y Gestión de Sistemas de Información en Tecnocampus (UPF), con el TFG ya finalizado. He obtenido el <strong>Junior Cybersecurity Analyst Career Path</strong> de Cisco y estoy preparando la certificación <strong>CompTIA Security+</strong>.',
+        'Por mi cuenta he creado <strong>LlibretaAI</strong>, una app Android de notas de voz con IA que funciona íntegramente en el móvil, diseñada para que los datos del usuario nunca salgan del dispositivo. Ahora está en beta cerrada y busco testers para publicarla en Google Play.',
+        'Profesionalmente, donde quiero especializarme es en la <strong>arquitectura y la auditoría de ciberseguridad</strong>, más que en el desarrollo de software. En el currículum encontrarán el detalle.'
+      ],
+      closing: 'Un cordial saludo,'
+    }
+  },
+
+  // ------------------------------------------------------------------ EN
+  en: {
+    ui: {
+      role: 'Cybersecurity Engineer · Capgemini',
+      cv: 'Resume',
+      coverLetter: 'Cover letter',
+      print: 'Download PDF',
+      summary: 'Profile',
+      experience: 'Experience',
+      education: 'Education',
+      certifications: 'Certifications',
+      skills: 'Skills',
+      languages: 'Languages',
+      other: 'Other experience',
+      project: 'Personal project',
+      testers: 'Looking for testers to publish it on Google Play',
+      visit: 'Become a tester',
+      tools: 'Tools'
+    },
+    summary: `Cybersecurity engineer at <strong>Capgemini</strong> with a year and a half of experience delivering security services to enterprise clients. I currently manage a client's <strong>security exception management service</strong> and lead its <strong>evolution and transformation service</strong>. I combine project management, process automation (Power Automate) and data analysis (Power BI) with hands-on experience in security systems and networking. My professional focus is <strong>cybersecurity architecture and auditing</strong>, rather than software development.`,
+    experience: [
+      {
+        company: 'Capgemini',
+        meta: 'Barcelona · Hybrid',
+        roles: [
+          {
+            title: 'Cybersecurity Engineer',
+            period: 'Apr 2026 – Present',
+            type: 'Full-time',
+            current: true,
+            bullets: [
+              'Manage the security exception service for an enterprise client: analysis, processing and follow-up of exception requests.',
+              'Lead the evolution and transformation service: continuous improvement and automation of service processes.',
+              'Operational tracking and reporting with ITSM tools and service dashboards.'
+            ],
+            tools: ['ITSM', 'Service dashboards', 'Power Automate', 'Power BI', 'Microsoft 365']
+          },
+          {
+            title: 'Cybersecurity Trainee',
+            period: 'Jun 2025 – Mar 2026',
+            type: 'Internship',
+            bullets: [
+              'Cybersecurity project management for a client within a Security Operations Center (SOC).',
+              'Built a Power Automate tool to automate project management workflows.',
+              'Designed tracking dashboards and KPIs in Power BI.'
+            ],
+            tools: ['Power Automate', 'Power BI', 'Microsoft 365']
+          }
+        ]
+      },
+      {
+        company: 'GSS Security',
+        meta: 'Mataró · On-site',
+        roles: [
+          {
+            title: 'Technical Support',
+            period: 'Jun 2023 – Jun 2025',
+            type: 'Part-time',
+            bullets: [
+              'Technical support for customers and field technicians on intrusion (burglar alarm) and CCTV systems.',
+              'Installation, maintenance and configuration of systems, including networking and video recorders (NVR).',
+              'Incident management and follow-up through the ticketing system.'
+            ],
+            tools: ['Alarm systems', 'CCTV', 'NVR', 'Networking', 'Ticketing']
+          }
+        ]
+      }
+    ],
+    project: {
+      name: 'LlibretaAI',
+      tagline: 'Android voice-notes app that transcribes and summarizes lectures and meetings with AI running entirely on the device.',
+      bullets: [
+        'Privacy-by-design architecture: audio and notes never leave the phone. No servers, accounts, ads, tracking or analytics.',
+        'Works offline once the models are downloaded.',
+        'Summaries, mind maps, task lists, speaker separation and Q&A over your notes.',
+        'In closed beta on Google Play.'
+      ]
+    },
+    other: 'Private tutoring in languages and mathematics (5+ years) · Hospitality: kitchen (summer 2021) and waiting staff (May – Nov 2022).',
+    education: [
+      {
+        title: 'BSc in Computer Engineering and Information Systems Management',
+        place: 'Tecnocampus (UPF) · Mataró',
+        period: '2020 – Dec 2026 (expected)',
+        note: 'Bachelor’s thesis completed.'
+      },
+      {
+        title: 'Scientific-Technological Baccalaureate',
+        place: 'Escola La Presentació · Arenys de Mar',
+        period: '2020'
+      },
+      {
+        title: 'Dual Diploma – American High School Diploma',
+        place: 'Academica International Studies',
+        period: '2016 – 2020'
+      }
+    ],
+    certifications: [
+      { title: 'Junior Cybersecurity Analyst Career Path', issuer: 'Cisco · Oct 2025', url: CISCO_URL },
+      { title: 'CompTIA Security+', issuer: 'In progress', pending: true },
+      { title: '360 LPT – English B2', issuer: 'Cambridge FCE equivalent · 2021' }
+    ],
+    skills: [
+      { group: 'Cybersecurity', items: ['Security exception management', 'Cyber defense', 'Information security', 'Network security'] },
+      { group: 'Management & service', items: ['Project management', 'ITSM tools', 'Service management', 'Agile / Scrum', 'Lean', 'Waterfall'] },
+      { group: 'Automation & data', items: ['Power Automate', 'Power BI', 'DAX', 'Power Query (M)', 'Row-Level Security', 'REST APIs', 'ETL'] },
+      { group: 'Databases', items: ['SQL', 'MongoDB', 'Relational & NoSQL design'] },
+      { group: 'Networks & systems', items: ['LAN / WAN', 'IP · DNS', 'Linux', 'Windows', 'macOS', 'CCTV / NVR'] },
+      { group: 'Development', items: ['Java', 'Spring Boot', 'Python', 'HTML / CSS / JavaScript', 'Git / GitHub', 'Docker'] }
+    ],
+    languages: [
+      { name: 'Catalan', level: 'Native', pct: 100 },
+      { name: 'Spanish', level: 'Native', pct: 100 },
+      { name: 'English', level: 'Advanced (B2)', pct: 80 },
+      { name: 'French', level: 'Basic', pct: 20 }
+    ],
+    letter: {
+      date: 'Barcelona, 2026',
+      greeting: 'Dear Hiring Manager,',
+      body: [
+        'I am a <strong>cybersecurity engineer at Capgemini</strong>, where I have worked since June 2025. I started as a trainee in a Security Operations Center (SOC), managing cybersecurity projects for a client, and since April 2026 I have been a full-time member of the team: I manage a client’s security exception service and lead its evolution and transformation service.',
+        'Along the way I have learned to work across both the technical and the management side: coordinating with the client, tracking the service with ITSM tools, and automating processes with Power Automate and Power BI to cut manual work and give clear visibility of the service status.',
+        'Before that, I spent two years in technical support at GSS Security, helping customers and field technicians with alarm, CCTV and network systems. That role gave me a solid hands-on foundation and plenty of experience solving incidents directly with customers.',
+        'I am completing my degree in Computer Engineering and Information Systems Management at Tecnocampus (UPF), with my bachelor’s thesis already finished. I have earned Cisco’s <strong>Junior Cybersecurity Analyst Career Path</strong> and I am preparing for the <strong>CompTIA Security+</strong> certification.',
+        'On my own I built <strong>LlibretaAI</strong>, an Android voice-notes app with AI that runs entirely on the phone, designed so that user data never leaves the device. It is now in closed beta and I am looking for testers to publish it on Google Play.',
+        'Professionally, I want to specialize in <strong>cybersecurity architecture and auditing</strong>, rather than software development. You will find the details in my resume.'
+      ],
+      closing: 'Kind regards,'
+    }
   }
 };
 
-// Variables Carta de Presentació 
-const coverLetterContent = {
-  ca: `<h2>‣ Carta de Presentació</h2>
-<p class="date">Barcelona, 2025</p>
-<p class="greeting">Sobre mi:</p>
-<p>Soc estudiant d'Enginyeria Informàtica i Gestió de Sistemes d'Informació al Tecnocampus (UPF) i actualment estic buscant l'oportunitat de realitzar pràctiques professionals per complementar la meva formació acadèmica.</p>
-<p>Al llarg dels meus estudis he desenvolupat habilitats tècniques en diversos llenguatges de programació (Java, Python, JavaScript), tecnologies web (HTML, CSS), gestió de bases de dades (SQL) i sistemes de control de versions (GitHub). També he adquirit coneixements en sistemes operatius, xarxes i seguretat informàtica.</p>
-<p>A més de formació tècnica, compto amb experiència laboral en el sector del servei tècnic en sistemes de seguretat i atenció al client. Aquestes experiències m'han permès desenvolupar habilitats de comunicació, treball en equip i resolució de problemes.</p>
-<p>El camp que més m'interessa és el de la <strong>ciberseguretat</strong>, per la qual cosa preferiblement busco pràctiques en aquest àmbit. La meva experiència en SOC (Centre d'Operacions de Seguretat) i coneixements en SIEM, Threat Hunting i seguretat de xarxes em fan especialment adequat per a aquest tipus de rols.</p>
-<p>Estic especialment interessat en la possibilitat de signar un conveni de pràctiques amb el meu centre universitari per tal de completar la meva formació, i considero que la seva empresa podria ser un bon entorn i una oportunitat per aplicar i ampliar els meus coneixements.</p>
-<p>Des d'aquest portafoli podeu accedir al meu currículum més detalladament.</p>
-<p class="closing">Salut!</p>
-<p class="signature">Marc Jiménez</p>`,
-  
-  en: `<h2>‣ Cover Letter</h2>
-<p class="date">Barcelona, 2025</p>
-<p class="greeting">About me:</p>
-<p>I am a student of Computer Engineering and Information Systems Management at Tecnocampus (UPF) and I am currently looking for an opportunity to undertake professional internships to complement my academic training.</p>
-<p>Through my studies, I have developed technical skills in various programming languages (Java, Python, JavaScript), web technologies (HTML, CSS), database management (SQL), and version control systems (GitHub). I have also acquired knowledge in operating systems, networks, and computer security.</p>
-<p>In addition to my technical training, I have work experience in the security systems technical service sector, as well as in customer service. These experiences have allowed me to develop communication skills, teamwork, and problem-solving abilities.</p>
-<p>The field I am most interested in is <strong>cybersecurity</strong>, which is why I am preferably seeking internships in this area. My experience in SOC (Security Operations Center) and knowledge in SIEM, Threat Hunting, and network security make me particularly suitable for this type of role.</p>
-<p>I am particularly interested in the possibility of signing an internship agreement with my university to complete my university studies, and I believe your company could be an appropriate environment to apply and expand my knowledge.</p>
-<p>From this portfolio you can access a more detailed CV resume about my experience.</p>
-<p class="closing">Sincerely,</p>
-<p class="signature">Marc Jiménez</p>`,
-  
-  es: `<h2>‣ Carta de Presentación</h2>
-<p class="date">Barcelona, 2025</p>
-<p class="greeting">Sobre mí:</p>
-<p>Soy estudiante de Ingeniería Informática y Gestión de Sistemas de Información en Tecnocampus (UPF) y actualmente estoy buscando la oportunidad de realizar prácticas profesionales para complementar mi formación académica.</p>
-<p>A lo largo de mis estudios, he desarrollado habilidades técnicas en diversos lenguajes de programación (Java, Python, JavaScript), tecnologías web (HTML, CSS), gestión de bases de datos (SQL) y sistemas de control de versiones (GitHub). También he adquirido conocimientos en sistemas operativos, redes y seguridad informática.</p>
-<p>Además de mi formación técnica, cuento con experiencia laboral en el sector del servicio técnico en sistemas de seguridad, así como en atención al cliente. Estas experiencias me han permitido desarrollar habilidades de comunicación, trabajo en equipo y resolución de problemas.</p>
-<p>El campo que más me interesa es el de la <strong>ciberseguridad</strong>, por lo que preferiblemente busco prácticas en este ámbito. Mi experiencia en SOC (Centro de Operaciones de Seguridad) y conocimientos en SIEM, Threat Hunting y seguridad de redes me hacen especialmente adecuado para este tipo de roles.</p>
-<p>Estoy especialmente interesado en la posibilidad de firmar un convenio de prácticas con mi centro universitario para poner punto final a mi formación universitaria, y considero que su empresa podría ser un entorno adecuado así como una oportunidad de aplicar y ampliar mis conocimientos.</p>
-<p>Desde este portafolio pueden acceder a mi currículum con más detalle.</p>
-<p class="closing">Atentamente,</p>
-<p class="signature">Marc Jiménez</p>`
+// =====================================================================
+//  RENDERITZAT
+// =====================================================================
+
+const state = {
+  type: 'cv',
+  lang: content[localStorage.getItem('lang')] ? localStorage.getItem('lang') : 'ca'
 };
 
-// Variables CV
-const cvContent = {
-  en: `<h2>‣ Personal Information</h2>
-<p>Nationality: Spain<br>Year of Birth: 2002<br>Gender: Male</p>
-<h2>‣ Education</h2>
-<ul>
-  <li><strong>La Presentació School</strong>, Arenys de Mar, Barcelona
-    <ul>
-      <li>Primary, Secondary and Scientific-Technological Baccalaureate (Completion - 2020).</li>
-    </ul>
-  </li>
-  <li><strong>Academica International Studies</strong>, Barcelona
-    <ul>
-      <li>American International High School Diploma (Dual Diploma of English, Academica) (Completion - 2020).</li>
-    </ul>
-  </li>
-  <li><strong>Tecnocampus (UPF)</strong>, Mataró, Barcelona
-    <ul>
-      <li>Current student of Computer Engineering and Information Systems Management.</li>
-    </ul>
-  </li>
-</ul>
-<h2>‣ Certifications</h2>
-<ul>
-  <li><strong>English Certification 360 LPT B2</strong> (Equivalent to Cambridge FCE) – 2021.</li>
-  <li><strong>Dual Diploma Program (American High School)</strong> – 2016 - 2020.</li>
-</ul>
-<h2>‣ Work Experience</h2>
-<ul>
-  <li><strong>Private tutoring for over 5 years</strong> – Languages (Catalan, Spanish, English), mathematics and general academic support (Primary, Secondary, Baccalaureate).</li>
-  <li><strong>Kitchen staff in a restaurant</strong> – Summer season 2021.</li>
-  <li><strong>Waiter</strong> – From May to November 2022.</li>
-  <li><strong>Technical support at GSSecurity</strong> – Intrusion systems and CCTV - From June 2023 to June 2025.</li>
-  <li><strong>Capgemini - Cybersecurity SOC Intern (GP)</strong> – Security Operations Center internship.</li>
-</ul>
-<h2>‣ Aspiration</h2>
-<p>I am a young and proactive person, eager to work to finance my studies, which are currently my main focus during the academic year.<br><br>
-I would be delighted to collaborate with your company, bringing my resources, knowledge and motivation to both work and learn, to serve you and your business.<br><br>
-<strong>I am currently seeking the opportunity to sign an internship agreement in order to complete my university studies.</strong></p>
-<h2>‣ Skills</h2>
-<ul>
-  <li><strong>Native Languages:</strong>
-    <ul>
-      <li>Spoken and written <strong>Catalan.</strong> Native level.</li>
-      <li>Spoken and written <strong>Spanish.</strong> Native level.</li>
-    </ul>
-  </li>
-  <li><strong>Other Languages:</strong>
-    <ul>
-      <li>Spoken and written <strong>English.</strong> High level.</li>
-      <li>Spoken and written <strong>French.</strong> Very basic level.</li>
-    </ul>
-  </li>
-  <li><strong>Skills and Competencies:</strong>
-    <ul>
-      <li><strong>Programming & Development:</strong>
-        <ul>
-          <li>Java Development.</li>
-          <li>Springboot.</li>
-          <li>Python Development.</li>
-          <li>HTML, CSS & JavaScript.</li>
-          <li>Github.</li>
-          <li>Docker.</li>
-        </ul>
-      </li>
-      <li><strong>Database Management:</strong>
-        <ul>
-          <li>Management, Design, & Creation of relational and non-relational DB.</li>
-          <li>MongoDB.</li>
-          <li>SQL.</li>
-        </ul>
-      </li>
-      <li><strong>Cybersecurity & Network:</strong>
-        <ul>
-          <li>SOC Experience (Security Operations Center).</li>
-          <li>SIEM (Security Information and Event Management).</li>
-          <li>Threat Hunting.</li>
-          <li>Firewalls configuration and management.</li>
-          <li>Network Security.</li>
-          <li>Network Fundamentals, Network Access, IP Connectivity, IP Services, DNS, LAN, WAN.</li>
-        </ul>
-      </li>
-      <li><strong>Microsoft Power BI:</strong>
-        <ul>
-          <li>Data modeling (star schema, relationships, fact and dimension tables).</li>
-          <li>Design and implementation of relational semantic models.</li>
-          <li>Creation of measures and KPIs using DAX.</li>
-          <li>Design of interactive dashboards and advanced visualizations.</li>
-          <li>Implementation of Row-Level Security (RLS).</li>
-          <li>Publishing and automation with Power BI Service.</li>
-          <li>Connection to REST APIs and databases (SQL, NoSQL, cloud and on-premise).</li>
-          <li>ETL transformation and automation using Power Query (M).</li>
-        </ul>
-      </li>
-      <li><strong>Systems & Platforms:</strong>
-        <ul>
-          <li>Experience with Operating Systems: Linux, Windows, macOS, iOS, and Android.</li>
-          <li>WordPress and other CMS.</li>
-        </ul>
-      </li>
-      <li><strong>Methodologies & Skills:</strong>
-        <ul>
-          <li>Team-oriented professional with strong interpersonal and communication skills.</li>
-          <li>Proficiency with computers and other digital devices.</li>
-          <li>Positive attitude and willingness to work.</li>
-          <li>Familiarity with software implementation methodologies such as Waterfall, Agile, Lean, and Scrum.</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>`,
-  es: `<h2>‣ Información Personal</h2>
-<p>Nacionalidad: España<br>Año de nacimiento: 2002<br>Género: Masculino</p>
-<h2>‣ Formación</h2>
-<ul>
-  <li><strong>Escuela La Presentación</strong>, Arenys de Mar, Barcelona
-    <ul>
-      <li>Primaria, Secundaria y Bachillerato Científico-Tecnológico (Finalización - 2020).</li>
-    </ul>
-  </li>
-  <li><strong>Academica International Studies</strong>, Barcelona
-    <ul>
-      <li>Bachillerato Internacional Americano (Dual Diploma of English, Academica) (Finalización - 2020).</li>
-    </ul>
-  </li>
-  <li><strong>Tecnocampus (UPF)</strong>, Mataró, Barcelona
-    <ul>
-      <li>Estudiante actual de Ingeniería Informática y Gestión de Sistemas de Información.</li>
-    </ul>
-  </li>
-</ul>
-<h2>‣ Títulos</h2>
-<ul>
-  <li><strong>Certificación de inglés 360 LPT B2</strong> (equivalente FCE Cambridge) – 2021.</li>
-  <li><strong>Dual Diploma Program (Bachillerato Americano)</strong> – 2016 - 2020.</ul>
-<h2>‣ Experiencia Laboral</h2>
-<ul>
-  <li><strong>Clases particulares durante más de 5 años</strong> – Idiomas (Catalán, Castellano, Inglés), matemáticas y apoyo general (Primaria, ESO, Bachillerato).</li>
-  <li><strong>Equipo de cocina en un restaurante</strong> – Temporada de verano 2021.</li>
-  <li><strong>Camarero</strong> – De mayo a noviembre 2022.</li>
-  <li><strong>Servicio técnico en GSSecurity</strong> – Sistemas de intrusión y CCTV - De junio 2023 a junio 2025.</li>
-  <li><strong>Prácticas en SOC de Ciberseguridad (GP)</strong> – Prácticas en Centro de Operaciones de Seguridad.</li>
-</ul>
-<h2>‣ Aspiración</h2>
-<p>Soy una persona joven y con iniciativa, y estoy deseando trabajar para financiar mis estudios, que actualmente son mi actividad principal durante el curso académico.<br><br>
-Estaría encantado de poder colaborar con su empresa, poniendo mis recursos, conocimientos y ganas, tanto de trabajar como de aprender, a su servicio y al de su negocio.<br><br>
-<strong>Actualmente, estoy buscando la posibilidad de firmar un convenio de prácticas para poder completar mi etapa universitaria.</strong></p>
-<h2>‣ Competencias</h2>
-<ul>
-  <li><strong>Lenguas Maternas:</strong>
-    <ul>
-      <li><strong>Catalán</strong> hablado y escrito. Nivel nativo.</li>
-      <li><strong>Castellano</strong> hablado y escrito. Nivel nativo.</li>
-    </ul>
-  </li>
-  <li><strong>Otros Idiomas:</strong>
-    <ul>
-      <li><strong>Inglés</strong> hablado y escrito. Nivel alto.</li>
-      <li><strong>Francés</strong> hablado y escrito. Nivel muy básico.</li>
-    </ul>
-  </li>
-  <li><strong>Habilidades y Competencias:</strong>
-    <ul>
-      <li><strong>Programación y Desarrollo:</strong>
-        <ul>
-          <li>Desarrollo en Java.</li>
-          <li>Springboot.</li>
-          <li>Desarrollo en Python.</li>
-          <li>HTML, CSS & JavaScript.</li>
-          <li>Github.</li>
-          <li>Docker.</li>
-        </ul>
-      </li>
-      <li><strong>Gestión de Bases de Datos:</strong>
-        <ul>
-          <li>Administración, Diseño y Creación de Bases de datos relacionales y no relacionales.</li>
-          <li>MongoDB.</li>
-          <li>SQL.</li>
-        </ul>
-      </li>
-      <li><strong>Ciberseguridad y Redes:</strong>
-        <ul>
-          <li>Experiencia SOC (Centro de Operaciones de Seguridad).</li>
-          <li>SIEM (Gestión de Información y Eventos de Seguridad).</li>
-          <li>Threat Hunting (Caza de Amenazas).</li>
-          <li>Configuración y gestión de firewalls.</li>
-          <li>Seguridad de redes.</li>
-          <li>Fundamentos de Redes, Acceso a Redes, Conectividad IP, Servicios IP, DNS, LAN, WAN.</li>
-        </ul>
-      </li>
-      <li><strong>Microsoft Power BI:</strong>
-        <ul>
-          <li>Modelado de datos.</li>
-          <li>Diseño e implementación de modelos semánticos relacionales.</li>
-          <li>Creación de medidas y KPIs con DAX.</li>
-          <li>Diseño de dashboards interactivos y visuales avanzados.</li>
-          <li>Implementación de Row-Level Security (RLS).</li>
-          <li>Publicación y automatización con Power BI Service.</li>
-          <li>Conexión a APIs REST y bases de datos (SQL, NoSQL, cloud y on-premise).</li>
-          <li>Transformación y automatización ETL con Power Query (M).</li>
-        </ul>
-      </li>
-      <li><strong>Sistemas y Plataformas:</strong>
-        <ul>
-          <li>Dominio de los Sistemas Operativos Linux, Windows, MacOS, iOS y Android.</li>
-          <li>WordPress y otros CMS.</li>
-        </ul>
-      </li>
-      <li><strong>Metodologías y Habilidades:</strong>
-        <ul>
-          <li>Trabajo en equipo y buena comunicación.</li>
-          <li>Dominio de ordenadores y otros dispositivos informáticos.</li>
-          <li>Actitud positiva y con ganas de trabajar.</li>
-          <li>Familiaridad con procesos de implementación de software como Waterfall, Agile, Lean, y Scrum.</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>`,
-  ca: `<h2>‣ Informació Personal</h2>
-<p>Nacionalitat: Espanya<br>Any de naixement: 2002<br>Gènere: Masculí</p>
-<h2>‣ Formació</h2>
-<ul>
-  <li><strong>Escola La Presentació</strong>, Arenys de Mar, Barcelona
-    <ul>
-      <li>Primària, Secundària i Batxillerat Científic-Tecnològic (Finalització - 2020).</li>
-    </ul>
-  </li>
-  <li><strong>Academica International Studies</strong>, Barcelona
-    <ul>
-      <li>Batxillerat Internacional Americà (Dual Diploma of English, Academica) (Finalització - 2020).</li>
-    </ul>
-  </li>
-  <li><strong>Tecnocampus (UPF)</strong>, Mataró, Barcelona
-    <ul>
-      <li>Estudiant actual d'Enginyeria Informàtica i Gestió de Sistemes d'Informació.</li>
-    </ul>
-  </li>
-</ul>
-<h2>‣ Títols</h2>
-<ul>
-  <li><strong>Certificació d'anglès 360 LPT B2</strong> (Equivalent FCE Cambridge) – 2021.</li>
-  <li><strong>Dual Diploma Program (Batxillerat Americà)</strong> – 2016 - 2020.</li>
-</ul>
-<h2>‣ Experiència Laboral</h2>
-<ul>
-  <li><strong>Classes particulars durant més de 5 anys</strong> – Idiomes (Català, Castellà, Anglès), matemàtiques i suport general (Primària, ESO, Batxillerat).</li>
-  <li><strong>Equip de cuina a un restaurant</strong> – Temporada d'Estiu 2021.</li>
-  <li><strong>Cambrer</strong> – De maig a novembre 2022.</li>
-  <li><strong>Servei tècnic a GSSecurity</strong> – Sistemes d'intrusió i CCTV - De juny 2023 a juny 2025.</li>
-  <li><strong>Pràctiques en SOC de Ciberseguretat (GP)</strong> – Pràctiques en Centre d'Operacions de Seguretat.</li>
-</ul>
-<h2>‣ Aspiració</h2>
-<p>Soc una persona jove i amb iniciativa, i estic desitjant treballar per finançar els meus estudis, que actualment són la meva activitat principal durant el curs acadèmic.<br><br>
-Estaria encantat de poder col·laborar amb la seva empresa, posant els meus recursos, coneixements i ganes, tant de treballar com d'aprendre, al seu servei i al del seu negoci.<br><br>
-<strong>Actualment, estic buscant la possibilitat de signar un conveni de pràctiques per tal de poder completar la meva etapa Universitària.</strong></p>
-<h2>‣ Competències</h2>
-<ul>
-  <li><strong>Llengües Maternes:</strong>
-    <ul>
-      <li><strong>Català</strong> parlat i escrit. Nivell natiu.</li>
-      <li><strong>Castellà</strong> parlat i escrit. Nivell natiu.</li>
-    </ul>
-  </li>
-  <li><strong>Altres Llengües:</strong>
-    <ul>
-      <li><strong>Anglès</strong> parlat i escrit. Nivell alt.</li>
-      <li><strong>Francès</strong> parlat i escrit. Nivell molt bàsic.</li>
-    </ul>
-  </li>
-  <li><strong>Habilitats i Competències:</strong>
-    <ul>
-      <li><strong>Programació i Desenvolupament:</strong>
-        <ul>
-          <li>Desenvolupament en Java.</li>
-          <li>Springboot.</li>
-          <li>Desenvolupament en Python.</li>
-          <li>HTML, CSS & JavaScript.</li>
-          <li>Github.</li>
-          <li>Docker.</li>
-        </ul>
-      </li>
-      <li><strong>Gestió de Bases de Dades:</strong>
-        <ul>
-          <li>Administració, Disseny i creació de Bases de dades relacionals i no relacionals.</li>
-          <li>MongoDB.</li>
-          <li>SQL.</li>
-        </ul>
-      </li>
-      <li><strong>Ciberseguretat i Xarxes:</strong>
-        <ul>
-          <li>Experiència SOC (Centre d'Operacions de Seguretat).</li>
-          <li>SIEM (Gestió d'Informació i Esdeveniments de Seguretat).</li>
-          <li>Threat Hunting (Caça d'Amenaces).</li>
-          <li>Configuració i gestió de firewalls.</li>
-          <li>Seguretat de xarxes.</li>
-          <li>Network Fundamentals, Network Access, IP Connectivity, IP Services, DNS, LAN, WAN.</li>
-        </ul>
-      </li>
-      <li><strong>Microsoft Power BI:</strong>
-        <ul>
-          <li>Modelat de dades.</li>
-          <li>Disseny i implementació de models semàntics relacionals.</li>
-          <li>Creació de mesures i KPIs amb DAX.</li>
-          <li>Disseny de dashboards interactius i visuals avançats.</li>
-          <li>Implementació de Row-Level Security (RLS).</li>
-          <li>Publicació i automatització amb Power BI Service.</li>
-          <li>Connexió a APIs REST i bases de dades (SQL, NoSQL, cloud i on-premise).</li>
-          <li>Transformació i automatització ETL amb Power Query (M).</li>
-        </ul>
-      </li>
-      <li><strong>Sistemes i Plataformes:</strong>
-        <ul>
-          <li>Domini dels Sistemes Operatius Linux, Windows, MacOS, iOS, i Android.</li>
-          <li>WordPress i altres CMS.</li>
-        </ul>
-      </li>
-      <li><strong>Metodologies i Habilitats:</strong>
-        <ul>
-          <li>Treball en equip i bona comunicació.</li>
-          <li>Domini dels ordinadors i altres dispositius informàtics.</li>
-          <li>Actitud positiva i amb ganes de treballar.</li>
-          <li>Familiaritat amb processos d'implementació de software com Waterfall, Agile, Lean, i Scrum.</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>`
-};
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+function renderCV(c) {
+  const experience = c.experience.map((job) => `
+    <article class="job">
+      <header class="job-head">
+        <h3>${esc(job.company)}</h3>
+        <span class="muted">${esc(job.meta)}</span>
+      </header>
+      <ol class="timeline">
+        ${job.roles.map((r) => `
+          <li class="${r.current ? 'current' : ''}">
+            <div class="role-head">
+              <h4>${esc(r.title)}</h4>
+              <span class="period">${esc(r.period)}</span>
+            </div>
+            <p class="muted small">${esc(r.type)}</p>
+            <ul class="bullets">${r.bullets.map((b) => `<li>${esc(b)}</li>`).join('')}</ul>
+            <div class="chips chips-small" aria-label="${esc(c.ui.tools)}">${r.tools.map((t) => `<span class="chip">${esc(t)}</span>`).join('')}</div>
+          </li>`).join('')}
+      </ol>
+    </article>`).join('');
+
+  const education = c.education.map((e) => `
+    <div class="entry">
+      <div class="role-head">
+        <h4>${esc(e.title)}</h4>
+        <span class="period">${esc(e.period)}</span>
+      </div>
+      <p class="muted small">${esc(e.place)}${e.note ? ' · ' + esc(e.note) : ''}</p>
+    </div>`).join('');
+
+  const certs = c.certifications.map((x) => `
+    <div class="cert ${x.pending ? 'pending' : ''}">
+      <span class="cert-icon" aria-hidden="true">${x.pending ? '◔' : '✓'}</span>
+      <div>
+        <h4>${x.url ? `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a>` : esc(x.title)}</h4>
+        <p class="muted small">${esc(x.issuer)}</p>
+      </div>
+    </div>`).join('');
+
+  const skills = c.skills.map((g) => `
+    <div class="skill-group">
+      <h4>${esc(g.group)}</h4>
+      <div class="chips">${g.items.map((i) => `<span class="chip">${esc(i)}</span>`).join('')}</div>
+    </div>`).join('');
+
+  const languages = c.languages.map((l) => `
+    <div class="lang">
+      <div class="lang-row"><span>${esc(l.name)}</span><span class="muted small">${esc(l.level)}</span></div>
+      <div class="bar"><span style="width:${l.pct}%"></span></div>
+    </div>`).join('');
+
+  return `
+    <section class="card">
+      <h2>${esc(c.ui.summary)}</h2>
+      <p class="lead">${c.summary}</p>
+    </section>
+
+    <section class="card">
+      <h2>${esc(c.ui.experience)}</h2>
+      ${experience}
+      <div class="other">
+        <h4>${esc(c.ui.other)}</h4>
+        <p class="muted small">${esc(c.other)}</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>${esc(c.ui.project)}</h2>
+      <div class="project">
+        <div class="role-head">
+          <h3><a href="${PROJECT_URL}" target="_blank" rel="noopener">${esc(c.project.name)}</a></h3>
+          <span class="badge">Beta · Google Play</span>
+        </div>
+        <p class="muted">${esc(c.project.tagline)}</p>
+        <ul class="bullets">${c.project.bullets.map((b) => `<li>${esc(b)}</li>`).join('')}</ul>
+        <a class="cta" href="${PROJECT_URL}" target="_blank" rel="noopener">${esc(c.ui.testers)} → <strong>${esc(c.ui.visit)}</strong></a>
+      </div>
+    </section>
+
+    <div class="grid-2">
+      <section class="card">
+        <h2>${esc(c.ui.education)}</h2>
+        ${education}
+      </section>
+      <section class="card">
+        <h2>${esc(c.ui.certifications)}</h2>
+        ${certs}
+      </section>
+    </div>
+
+    <section class="card">
+      <h2>${esc(c.ui.skills)}</h2>
+      <div class="skills-grid">${skills}</div>
+    </section>
+
+    <section class="card">
+      <h2>${esc(c.ui.languages)}</h2>
+      <div class="langs-grid">${languages}</div>
+    </section>`;
+}
+
+function renderLetter(c) {
+  const l = c.letter;
+  return `
+    <section class="card letter">
+      <p class="letter-date muted">${esc(l.date)}</p>
+      <p class="letter-greeting">${esc(l.greeting)}</p>
+      ${l.body.map((p) => `<p>${p}</p>`).join('')}
+      <p class="letter-closing">${esc(l.closing)}</p>
+      <p class="letter-signature">Marc Jiménez</p>
+      <p class="muted small"><a href="${LINKEDIN_URL}" target="_blank" rel="noopener">linkedin.com/in/mjimenezco</a></p>
+    </section>`;
+}
+
+function render() {
+  const c = content[state.lang];
+
+  document.documentElement.lang = state.lang;
+  document.getElementById('heroRole').textContent = c.ui.role;
+  document.getElementById('printLabel').textContent = c.ui.print;
+  document.getElementById('cvBtn').textContent = c.ui.cv;
+  document.getElementById('coverLetterBtn').textContent = c.ui.coverLetter;
+
+  for (const t of ['cv', 'coverLetter']) {
+    const btn = document.getElementById(t + 'Btn');
+    btn.classList.toggle('active', state.type === t);
+    btn.setAttribute('aria-selected', state.type === t);
+  }
+  for (const l of ['ca', 'es', 'en']) {
+    document.getElementById(l + 'Btn').classList.toggle('active', state.lang === l);
+  }
+
+  document.getElementById('content').innerHTML =
+    state.type === 'cv' ? renderCV(c) : renderLetter(c);
+}
 
 function showType(type) {
-  // Actualitza l'estil del botó actiu
-  document.getElementById('coverLetterBtn').classList.remove('active');
-  document.getElementById('cvBtn').classList.remove('active');
-  document.getElementById(type + 'Btn').classList.add('active');
-  
-  // Actualitza el tipus actual
-  currentType = type;
-  
-  // Actualitza el contingut en funció del tipus i llengua actuals
-  updateContent();
+  state.type = type;
+  render();
 }
 
 function showLang(lang) {
-  // Actualitza l'estil del botó actiu
-  document.getElementById('caBtn').classList.remove('active');
-  document.getElementById('enBtn').classList.remove('active');
-  document.getElementById('esBtn').classList.remove('active');
-  document.getElementById(lang + 'Btn').classList.add('active');
-  
-  // Actualitza la llengua actual
-  currentLang = lang;
-  
-  // Actualitza els textos dels botons
-  updateButtonLabels();
-  
-  // Actualitza el contingut en funció del tipus i llengua actuals
-  updateContent();
+  state.lang = lang;
+  localStorage.setItem('lang', lang);
+  render();
 }
 
-function updateButtonLabels() {
-  // Actualitza els textos dels botons segon la llengua actual
-  document.getElementById('coverLetterBtn').textContent = buttonLabels[currentLang].coverLetter;
-  document.getElementById('cvBtn').textContent = buttonLabels[currentLang].cv;
-  document.getElementById('caBtn').textContent = buttonLabels[currentLang].ca;
-  document.getElementById('enBtn').textContent = buttonLabels[currentLang].en;
-  document.getElementById('esBtn').textContent = buttonLabels[currentLang].es;
+// =====================================================================
+//  TEMA CLAR / FOSC
+// =====================================================================
+
+function applyTheme(dark) {
+  document.documentElement.toggleAttribute('data-theme-dark', dark);
+  document.querySelector('meta[name="theme-color"]').setAttribute('content', dark ? '#0F1220' : '#1A237E');
 }
 
-function updateContent() {
-  // Mostra el contingut corresponent al tipus i llengua actuals
-  if (currentType === 'cv') {
-    document.getElementById('content').innerHTML = cvContent[currentLang];
-  } else {
-    document.getElementById('content').innerHTML = coverLetterContent[currentLang];
-  }
-}
-
-// Inicialitza el contingut amb la carta de presentació en català
-document.addEventListener('DOMContentLoaded', function() {
-  showType('coverLetter');
-  showLang('ca');
-  updateButtonLabels(); // Assegura que els botons tinguin el text correcte al iniciar el portafoli
-});
-
-// Funció per canviar entre mode fosc i clar
 function toggleTheme() {
-  darkMode = !darkMode;
-  
-  // Canvia l'atribut de tema al body
-  if (darkMode) {
-    document.body.setAttribute('data-theme', 'dark');
-    document.querySelector('.theme-toggle i').textContent = 'light_mode';
-  } else {
-    document.body.removeAttribute('data-theme');
-    document.querySelector('.theme-toggle i').textContent = 'dark_mode';
-  }
-  
-  // Actualitza el color del tema a la metadata
-  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
-  if (metaThemeColor) {
-    metaThemeColor.setAttribute('content', darkMode ? '#3949AB' : '#1A237E');
-  }
+  const dark = !document.documentElement.hasAttribute('data-theme-dark');
+  localStorage.setItem('theme', dark ? 'dark' : 'light');
+  applyTheme(dark);
 }
+
+(function initTheme() {
+  const saved = localStorage.getItem('theme');
+  const dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+  applyTheme(dark);
+})();
+
+document.addEventListener('DOMContentLoaded', render);
