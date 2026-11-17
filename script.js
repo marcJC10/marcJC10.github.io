@@ -28,7 +28,7 @@ const content = {
       visit: 'Fes-te tester',
       tools: 'Eines'
     },
-    summary: `Enginyer de ciberseguretat a <strong>Capgemini</strong> amb un any i mig d'experiència en serveis de seguretat per a clients corporatius. Actualment formo part del <strong>servei d'excepcions de seguretat</strong> d'un client: analitzo les sol·licituds d'excepció, en valoro el risc i els controls compensatoris, i en faig el seguiment fins al tancament, coordinant-me amb els equips implicats. A més, treballo en el <strong>pla d'evolució i transformació del servei</strong>: n'automatitzo els processos (Power Automate) i li dono visibilitat amb reporting i KPIs (Power BI). El meu interès professional se centra en la <strong>gestió del risc, l'arquitectura i l'auditoria de ciberseguretat</strong>, més que no pas en el desenvolupament de software.`,
+    summary: `Enginyer de ciberseguretat a <strong>Capgemini</strong> amb un any i mig d'experiència en serveis de seguretat per a clients corporatius. Actualment formo part del <strong>servei d'excepcions de seguretat</strong> d'un client: analitzo les sol·licituds d'excepció, en valoro el risc i els controls compensatoris, i en faig el seguiment fins al tancament, coordinant-me amb els equips implicats. A més, treballo en el <strong>pla d'evolució i transformació del servei</strong>: n'automatitzo els processos (Power Automate) i li dono visibilitat amb reporting i KPIs (Power BI). El meu interès professional se centra en la <strong>gestió del risc, l'arquitectura i l'auditoria de ciberseguretat</strong>.`,
     experience: [
       {
         company: 'Capgemini',
@@ -160,7 +160,7 @@ const content = {
       visit: 'Hazte tester',
       tools: 'Herramientas'
     },
-    summary: `Ingeniero de ciberseguridad en <strong>Capgemini</strong> con año y medio de experiencia en servicios de seguridad para clientes corporativos. Actualmente formo parte del <strong>servicio de excepciones de seguridad</strong> de un cliente: analizo las solicitudes de excepción, valoro su riesgo y los controles compensatorios, y hago su seguimiento hasta el cierre, coordinándome con los equipos implicados. Además, trabajo en el <strong>plan de evolución y transformación del servicio</strong>: automatizo sus procesos (Power Automate) y le doy visibilidad con reporting y KPIs (Power BI). Mi interés profesional se centra en la <strong>gestión del riesgo, la arquitectura y la auditoría de ciberseguridad</strong>, más que en el desarrollo de software.`,
+    summary: `Ingeniero de ciberseguridad en <strong>Capgemini</strong> con año y medio de experiencia en servicios de seguridad para clientes corporativos. Actualmente formo parte del <strong>servicio de excepciones de seguridad</strong> de un cliente: analizo las solicitudes de excepción, valoro su riesgo y los controles compensatorios, y hago su seguimiento hasta el cierre, coordinándome con los equipos implicados. Además, trabajo en el <strong>plan de evolución y transformación del servicio</strong>: automatizo sus procesos (Power Automate) y le doy visibilidad con reporting y KPIs (Power BI). Mi interés profesional se centra en la <strong>gestión del riesgo, la arquitectura y la auditoría de ciberseguridad</strong>.`,
     experience: [
       {
         company: 'Capgemini',
@@ -292,7 +292,7 @@ const content = {
       visit: 'Become a tester',
       tools: 'Tools'
     },
-    summary: `Cybersecurity engineer at <strong>Capgemini</strong> with a year and a half of experience delivering security services to enterprise clients. I am currently part of a client's <strong>security exception management service</strong>: I analyze exception requests, assess their risk and compensating controls, and track them through to closure, coordinating with the teams involved. I also work on the <strong>service's evolution and transformation plan</strong>, automating its processes (Power Automate) and giving it visibility through reporting and KPIs (Power BI). My professional focus is <strong>cybersecurity risk management, architecture and auditing</strong>, rather than software development.`,
+    summary: `Cybersecurity engineer at <strong>Capgemini</strong> with a year and a half of experience delivering security services to enterprise clients. I am currently part of a client's <strong>security exception management service</strong>: I analyze exception requests, assess their risk and compensating controls, and track them through to closure, coordinating with the teams involved. I also work on the <strong>service's evolution and transformation plan</strong>, automating its processes (Power Automate) and giving it visibility through reporting and KPIs (Power BI). My professional focus is <strong>cybersecurity risk management, architecture and auditing</strong>.`,
     experience: [
       {
         company: 'Capgemini',
