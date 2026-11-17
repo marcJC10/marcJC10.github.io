@@ -28,7 +28,7 @@ const content = {
       visit: 'Fes-te tester',
       tools: 'Eines'
     },
-    summary: `Enginyer de ciberseguretat a <strong>Capgemini</strong> amb un any i mig d'experiència en serveis de seguretat per a clients corporatius. Actualment gestiono el <strong>servei d'excepcions de seguretat</strong> d'un client: analitzo les sol·licituds d'excepció, en valoro el risc i els controls compensatoris, i en faig el seguiment fins al tancament, coordinant-me amb els equips implicats. També porto el seu <strong>servei d'evolució i transformació</strong>, on automatitzo processos (Power Automate) i dono visibilitat del servei amb reporting i KPIs (Power BI). El meu interès professional se centra en la <strong>gestió del risc, l'arquitectura i l'auditoria de ciberseguretat</strong>, més que no pas en el desenvolupament de software.`,
+    summary: `Enginyer de ciberseguretat a <strong>Capgemini</strong> amb un any i mig d'experiència en serveis de seguretat per a clients corporatius. Actualment formo part del <strong>servei d'excepcions de seguretat</strong> d'un client: analitzo les sol·licituds d'excepció, en valoro el risc i els controls compensatoris, i en faig el seguiment fins al tancament, coordinant-me amb els equips implicats. A més, treballo en el <strong>pla d'evolució i transformació del servei</strong>: n'automatitzo els processos (Power Automate) i li dono visibilitat amb reporting i KPIs (Power BI). El meu interès professional se centra en la <strong>gestió del risc, l'arquitectura i l'auditoria de ciberseguretat</strong>, més que no pas en el desenvolupament de software.`,
     experience: [
       {
         company: 'Capgemini',
@@ -40,8 +40,8 @@ const content = {
             type: 'Jornada completa',
             current: true,
             bullets: [
-              "Gestió del servei d'excepcions de seguretat per a un client corporatiu: anàlisi, tramitació i seguiment de les sol·licituds d'excepció.",
-              "Responsable del servei d'evolució i transformació: millora contínua i automatització dels processos del servei.",
+              "Membre del servei d'excepcions de seguretat d'un client corporatiu: anàlisi, tramitació i seguiment de les sol·licituds d'excepció.",
+              "Treball en el pla d'evolució i transformació del servei d'excepcions: millora contínua i automatització dels seus processos.",
               'Seguiment operatiu i reporting amb eines ITSM i dashboards de servei.'
             ],
             tools: ['ITSM', 'Dashboards de servei', 'Power Automate', 'Power BI', 'Microsoft 365']
@@ -129,7 +129,7 @@ const content = {
       date: 'Barcelona, 2026',
       greeting: 'Benvolgut/da,',
       body: [
-        "Soc <strong>enginyer de ciberseguretat a Capgemini</strong>, on treballo des del juny de 2025. Vaig començar com a trainee en un Centre d'Operacions de Seguretat (SOC), gestionant projectes de ciberseguretat per a un client, i des de l'abril de 2026 formo part de l'equip a jornada completa: gestiono el servei d'excepcions de seguretat d'un client i porto el seu servei d'evolució i transformació.",
+        "Soc <strong>enginyer de ciberseguretat a Capgemini</strong>, on treballo des del juny de 2025. Vaig començar com a trainee en un Centre d'Operacions de Seguretat (SOC), gestionant projectes de ciberseguretat per a un client, i des de l'abril de 2026 formo part de l'equip a jornada completa: treballo al servei d'excepcions de seguretat d'un client, on també participo en el pla d'evolució i transformació del servei.",
         "La gestió d'excepcions m'ha ensenyat a equilibrar les necessitats del negoci amb els requisits de seguretat: entendre per què un equip no pot complir un control, valorar el risc que suposa, proposar mesures compensatòries i assegurar que cada excepció queda documentada, aprovada i revisada en termini.",
         "En paral·lel, he après a moure'm entre la part tècnica i la de gestió: coordinar-me amb el client i els diferents equips, fer el seguiment del servei amb eines ITSM, i automatitzar processos amb Power Automate i Power BI per reduir feina manual i donar visibilitat a l'estat del servei.",
         "Abans, durant dos anys, vaig fer de servei tècnic a GSS Security, donant suport a clients i a tècnics de camp en sistemes d'alarma, CCTV i xarxa. Aquella etapa em va donar una base pràctica sòlida i molta experiència resolent incidències amb el client al davant.",
@@ -160,7 +160,7 @@ const content = {
       visit: 'Hazte tester',
       tools: 'Herramientas'
     },
-    summary: `Ingeniero de ciberseguridad en <strong>Capgemini</strong> con año y medio de experiencia en servicios de seguridad para clientes corporativos. Actualmente gestiono el <strong>servicio de excepciones de seguridad</strong> de un cliente: analizo las solicitudes de excepción, valoro su riesgo y los controles compensatorios, y hago su seguimiento hasta el cierre, coordinándome con los equipos implicados. También llevo su <strong>servicio de evolución y transformación</strong>, donde automatizo procesos (Power Automate) y doy visibilidad del servicio con reporting y KPIs (Power BI). Mi interés profesional se centra en la <strong>gestión del riesgo, la arquitectura y la auditoría de ciberseguridad</strong>, más que en el desarrollo de software.`,
+    summary: `Ingeniero de ciberseguridad en <strong>Capgemini</strong> con año y medio de experiencia en servicios de seguridad para clientes corporativos. Actualmente formo parte del <strong>servicio de excepciones de seguridad</strong> de un cliente: analizo las solicitudes de excepción, valoro su riesgo y los controles compensatorios, y hago su seguimiento hasta el cierre, coordinándome con los equipos implicados. Además, trabajo en el <strong>plan de evolución y transformación del servicio</strong>: automatizo sus procesos (Power Automate) y le doy visibilidad con reporting y KPIs (Power BI). Mi interés profesional se centra en la <strong>gestión del riesgo, la arquitectura y la auditoría de ciberseguridad</strong>, más que en el desarrollo de software.`,
     experience: [
       {
         company: 'Capgemini',
@@ -172,8 +172,8 @@ const content = {
             type: 'Jornada completa',
             current: true,
             bullets: [
-              'Gestión del servicio de excepciones de seguridad para un cliente corporativo: análisis, tramitación y seguimiento de las solicitudes de excepción.',
-              'Responsable del servicio de evolución y transformación: mejora continua y automatización de los procesos del servicio.',
+              'Miembro del servicio de excepciones de seguridad de un cliente corporativo: análisis, tramitación y seguimiento de las solicitudes de excepción.',
+              'Trabajo en el plan de evolución y transformación del servicio de excepciones: mejora continua y automatización de sus procesos.',
               'Seguimiento operativo y reporting con herramientas ITSM y dashboards de servicio.'
             ],
             tools: ['ITSM', 'Dashboards de servicio', 'Power Automate', 'Power BI', 'Microsoft 365']
@@ -261,7 +261,7 @@ const content = {
       date: 'Barcelona, 2026',
       greeting: 'Estimado/a:',
       body: [
-        'Soy <strong>ingeniero de ciberseguridad en Capgemini</strong>, donde trabajo desde junio de 2025. Empecé como trainee en un Centro de Operaciones de Seguridad (SOC), gestionando proyectos de ciberseguridad para un cliente, y desde abril de 2026 formo parte del equipo a jornada completa: gestiono el servicio de excepciones de seguridad de un cliente y llevo su servicio de evolución y transformación.',
+        'Soy <strong>ingeniero de ciberseguridad en Capgemini</strong>, donde trabajo desde junio de 2025. Empecé como trainee en un Centro de Operaciones de Seguridad (SOC), gestionando proyectos de ciberseguridad para un cliente, y desde abril de 2026 formo parte del equipo a jornada completa: trabajo en el servicio de excepciones de seguridad de un cliente, donde también participo en el plan de evolución y transformación del servicio.',
         'La gestión de excepciones me ha enseñado a equilibrar las necesidades del negocio con los requisitos de seguridad: entender por qué un equipo no puede cumplir un control, valorar el riesgo que supone, proponer medidas compensatorias y asegurar que cada excepción quede documentada, aprobada y revisada en plazo.',
         'En paralelo, he aprendido a moverme entre la parte técnica y la de gestión: coordinarme con el cliente y los distintos equipos, hacer el seguimiento del servicio con herramientas ITSM, y automatizar procesos con Power Automate y Power BI para reducir trabajo manual y dar visibilidad al estado del servicio.',
         'Antes, durante dos años, trabajé en el servicio técnico de GSS Security, dando soporte a clientes y a técnicos de campo en sistemas de alarma, CCTV y red. Aquella etapa me dio una base práctica sólida y mucha experiencia resolviendo incidencias de cara al cliente.',
@@ -292,7 +292,7 @@ const content = {
       visit: 'Become a tester',
       tools: 'Tools'
     },
-    summary: `Cybersecurity engineer at <strong>Capgemini</strong> with a year and a half of experience delivering security services to enterprise clients. I currently manage a client's <strong>security exception management service</strong>: I analyze exception requests, assess their risk and compensating controls, and track them through to closure, coordinating with the teams involved. I also lead the client's <strong>evolution and transformation service</strong>, automating processes (Power Automate) and providing service visibility through reporting and KPIs (Power BI). My professional focus is <strong>cybersecurity risk management, architecture and auditing</strong>, rather than software development.`,
+    summary: `Cybersecurity engineer at <strong>Capgemini</strong> with a year and a half of experience delivering security services to enterprise clients. I am currently part of a client's <strong>security exception management service</strong>: I analyze exception requests, assess their risk and compensating controls, and track them through to closure, coordinating with the teams involved. I also work on the <strong>service's evolution and transformation plan</strong>, automating its processes (Power Automate) and giving it visibility through reporting and KPIs (Power BI). My professional focus is <strong>cybersecurity risk management, architecture and auditing</strong>, rather than software development.`,
     experience: [
       {
         company: 'Capgemini',
@@ -304,8 +304,8 @@ const content = {
             type: 'Full-time',
             current: true,
             bullets: [
-              'Manage the security exception service for an enterprise client: analysis, processing and follow-up of exception requests.',
-              'Lead the evolution and transformation service: continuous improvement and automation of service processes.',
+              'Member of an enterprise client’s security exception service: analysis, processing and follow-up of exception requests.',
+              'Work on the exception service’s evolution and transformation plan: continuous improvement and automation of its processes.',
               'Operational tracking and reporting with ITSM tools and service dashboards.'
             ],
             tools: ['ITSM', 'Service dashboards', 'Power Automate', 'Power BI', 'Microsoft 365']
@@ -393,7 +393,7 @@ const content = {
       date: 'Barcelona, 2026',
       greeting: 'Dear Hiring Manager,',
       body: [
-        'I am a <strong>cybersecurity engineer at Capgemini</strong>, where I have worked since June 2025. I started as a trainee in a Security Operations Center (SOC), managing cybersecurity projects for a client, and since April 2026 I have been a full-time member of the team: I manage a client’s security exception service and lead its evolution and transformation service.',
+        'I am a <strong>cybersecurity engineer at Capgemini</strong>, where I have worked since June 2025. I started as a trainee in a Security Operations Center (SOC), managing cybersecurity projects for a client, and since April 2026 I have been a full-time member of the team: I work in a client’s security exception service, where I also contribute to the service’s evolution and transformation plan.',
         'Managing security exceptions has taught me to balance business needs with security requirements: understanding why a team cannot meet a control, assessing the risk involved, proposing compensating measures and making sure every exception is documented, approved and reviewed on time.',
         'Alongside that, I have learned to work across both the technical and the management side: coordinating with the client and different teams, tracking the service with ITSM tools, and automating processes with Power Automate and Power BI to cut manual work and give clear visibility of the service status.',
         'Before that, I spent two years in technical support at GSS Security, helping customers and field technicians with alarm, CCTV and network systems. That role gave me a solid hands-on foundation and plenty of experience solving incidents directly with customers.',
