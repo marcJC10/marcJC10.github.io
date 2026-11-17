@@ -462,13 +462,13 @@ function renderCV(c) {
   const languages = c.languages.map((l) => `
     <div class="lang">
       <div class="lang-row"><span>${esc(l.name)}</span><span class="muted small">${esc(l.level)}</span></div>
-      <div class="bar"><span style="width:${l.pct}%"></span></div>
+      <div class="bar"><span data-pct="${Number(l.pct) || 0}"></span></div>
     </div>`).join('');
 
   return `
     <section class="card">
       <h2>${esc(c.ui.summary)}</h2>
-      <p class="lead">${c.summary}</p>
+      <p class="lead">${c.summary /* HTML de confiança: text estàtic definit en aquest fitxer */}</p>
     </section>
 
     <section class="card">
@@ -521,7 +521,7 @@ function renderLetter(c) {
     <section class="card letter">
       <p class="letter-date muted">${esc(l.date)}</p>
       <p class="letter-greeting">${esc(l.greeting)}</p>
-      ${l.body.map((p) => `<p>${p}</p>`).join('')}
+      ${l.body.map((p) => `<p>${p /* HTML de confiança: text estàtic definit en aquest fitxer */}</p>`).join('')}
       <p class="letter-closing">${esc(l.closing)}</p>
       <p class="letter-signature">Marc Jiménez</p>
       <p class="muted small"><a href="${LINKEDIN_URL}" target="_blank" rel="noopener">linkedin.com/in/mjimenezco</a></p>
@@ -546,8 +546,15 @@ function render() {
     document.getElementById(l + 'Btn').classList.toggle('active', state.lang === l);
   }
 
-  document.getElementById('content').innerHTML =
-    state.type === 'cv' ? renderCV(c) : renderLetter(c);
+  // Tot el contingut dinàmic passa per esc(); només c.summary i letter.body
+  // contenen HTML i són text estàtic d'aquest mateix fitxer (mai dades externes).
+  const main = document.getElementById('content');
+  main.innerHTML = state.type === 'cv' ? renderCV(c) : renderLetter(c);
+
+  // L'amplada de les barres s'aplica via CSSOM per complir la CSP (sense style inline).
+  main.querySelectorAll('.bar span[data-pct]').forEach((el) => {
+    el.style.width = el.dataset.pct + '%';
+  });
 }
 
 function showType(type) {
@@ -582,4 +589,16 @@ function toggleTheme() {
   applyTheme(dark);
 })();
 
-document.addEventListener('DOMContentLoaded', render);
+// =====================================================================
+//  ESDEVENIMENTS (sense handlers inline, per a una CSP estricta)
+// =====================================================================
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('[data-type]').forEach((btn) =>
+    btn.addEventListener('click', () => showType(btn.dataset.type)));
+  document.querySelectorAll('[data-lang]').forEach((btn) =>
+    btn.addEventListener('click', () => showLang(btn.dataset.lang)));
+  document.getElementById('themeBtn').addEventListener('click', toggleTheme);
+  document.getElementById('printBtn').addEventListener('click', () => window.print());
+  render();
+});

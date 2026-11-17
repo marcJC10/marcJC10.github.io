@@ -6,9 +6,9 @@
   <title>Marc Jiménez – Cybersecurity Engineer</title>
   <meta name="description" content="Marc Jiménez – Enginyer de Ciberseguretat a Capgemini. Currículum i carta de presentació.">
   <meta name="theme-color" content="#1A237E">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -29,7 +29,7 @@
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
             LinkedIn
           </a>
-          <button class="btn btn-ghost" id="printBtn" type="button" onclick="window.print()">
+          <button class="btn btn-ghost" id="printBtn" type="button">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/></svg>
             <span id="printLabel"></span>
           </button>
@@ -40,16 +40,16 @@
     <!-- Barra d'eines -->
     <div class="toolbar">
       <div class="segmented" role="tablist">
-        <button id="cvBtn" role="tab" onclick="showType('cv')"></button>
-        <button id="coverLetterBtn" role="tab" onclick="showType('coverLetter')"></button>
+        <button id="cvBtn" role="tab" data-type="cv"></button>
+        <button id="coverLetterBtn" role="tab" data-type="coverLetter"></button>
       </div>
       <div class="toolbar-right">
         <div class="segmented segmented-small">
-          <button id="caBtn" onclick="showLang('ca')">CA</button>
-          <button id="esBtn" onclick="showLang('es')">ES</button>
-          <button id="enBtn" onclick="showLang('en')">EN</button>
+          <button id="caBtn" data-lang="ca">CA</button>
+          <button id="esBtn" data-lang="es">ES</button>
+          <button id="enBtn" data-lang="en">EN</button>
         </div>
-        <button class="icon-btn" id="themeBtn" type="button" onclick="toggleTheme()" aria-label="Canvia el tema">
+        <button class="icon-btn" id="themeBtn" type="button" aria-label="Canvia el tema">
           <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
           <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zM11 1h2v3h-2zm0 19h2v3h-2zM3.51 4.93l1.42-1.42 2.12 2.12-1.42 1.42zm12.02 12.02 1.42-1.42 2.12 2.12-1.42 1.42zM1 11h3v2H1zm19 0h3v2h-3zM3.51 19.07l2.12-2.12 1.42 1.42-2.12 2.12zM16.95 5.05l2.12-2.12 1.42 1.42-2.12 2.12z"/></svg>
         </button>
